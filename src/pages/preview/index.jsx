@@ -1,8 +1,9 @@
+import Hero from "./hero"
 
 
 const Preview = () => {
   return (
-    <div>Preview</div>
+    <div><Hero/></div>
   )
 }
 
