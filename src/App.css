@@ -100,9 +100,10 @@ input[type="email"]:focus {
 
 label {
   display: inline-block;
-  margin: 300px 0 10px 0;
+ 
   cursor: pointer;
   padding: 20px 50px;
+ 
   transition: background-color 0.3s ease, color 0.3s ease;
   text-align: center;
   height: 15px;
@@ -114,8 +115,9 @@ label {
 }
 
 label:hover {
-  color: white;
-  background-color: #0074d9;
+  color: #0074d9;
+  text-decoration: underline;
+  /* background-color: ; */
 }
 
 input[type="checkbox"] {
@@ -138,6 +140,7 @@ input[type="checkbox"] {
 
 #sign-up-toggle:not(:checked) ~ #login-toggle:checked ~ #login-panel button p {
   top: -35px;
+  ;
 }
 
 #sign-up-toggle:checked ~ #login-toggle:checked ~ #login-panel {
