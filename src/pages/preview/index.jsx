@@ -3,7 +3,11 @@ import Hero from "./hero"
 
 const Preview = () => {
   return (
-    <div><Hero/></div>
+
+      <Hero />
+      
+     
+      
   )
 }
 

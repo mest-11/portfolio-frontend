@@ -6,6 +6,9 @@ import Signin from './pages/signin'
 import Signup from './pages/signup'
 import Preview from './pages/preview'
 import Dashboard from './pages/dashboard'
+import Resume from './pages/preview/resume'
+import Projects from './pages/preview/projects'
+import Contact from './pages/preview/contact'
 
 function App() {
 
@@ -27,6 +30,15 @@ const router = createBrowserRouter([
   },
   { path: '/dashboard',
     element: <Dashboard/>  
+  },
+  { path: '/resume',
+    element: <Resume/>  
+  },
+  { path: '/projects',
+    element: <Projects/>
+  },
+  { path: '/contact',
+    element: <Contact/> 
   },
 ])
   return (
