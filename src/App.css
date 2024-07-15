@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+body {
+  background: #f7f7f7;
+  font-family: "Roboto", sans-serif;
+}
+
+button,
+label {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+#login-register {
+  font-size: 16px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+#login-panel {
+  position: absolute;
+  display: inline-block;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+  z-index: 5;
+  background: white;
+  top: -40px;
+  transition: 0.5s;
+  min-height: 310px;
+  border-radius: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  padding: 15px 10px;
+  border: solid 1px #dddddd;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: inherit;
+  display: block;
+  margin: 20px auto;
+  width: 250px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+  border-color: #0074d9;
+  outline: none;
+}
+
+#login-panel form {
+  position: relative;
+  transition: 0.5s;
+  top: 0;
+}
+
+#login-panel button {
+  margin: 0 auto;
+  display: block;
+  background: #0074d9;
+  border-radius: 5px;
+  color: white;
+  width: 100%;
+  height: 45px;
+  margin-bottom: 5px;
+  transition: background 0.3s ease;
+}
+
+#login-panel button:hover {
+  background: #005bb5;
+}
+
+#login-panel button p {
+  position: relative;
+  top: 0;
+  padding: 0;
+  margin: 0 0 15px 0;
+  transition: 0.5s;
+}
+
+#box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 450px;
+  width: 750px;
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+label {
+  display: inline-block;
+ 
+  cursor: pointer;
+  padding: 20px 50px;
+ 
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+  height: 15px;
+  width: 200px;
+  justify-self: center;
+  align-items: center;
+  color: #0074d9;
+  border-radius: 5px;
+}
+
+label:hover {
+  color: #0074d9;
+  text-decoration: underline;
+  /* background-color: ; */
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+#sign-up-toggle:not(:checked) ~ #login-toggle:not(:checked) ~ #login-panel {
+  left: 7%;
+}
+
+#sign-up-toggle:not(:checked) ~ #login-toggle:checked ~ #login-panel {
+  left: 48%;
+}
+
+#sign-up-toggle:not(:checked) ~ #login-toggle:checked ~ #login-panel form {
+  top: -180px;
+}
+
+#sign-up-toggle:not(:checked) ~ #login-toggle:checked ~ #login-panel button p {
+  top: -35px;
+  ;
+}
+
+#sign-up-toggle:checked ~ #login-toggle:checked ~ #login-panel {
+  left: 7%;
+}
+
+#sign-up-toggle:checked ~ #login-toggle:not(:checked) ~ #login-panel {
+  left: 48%;
+}
+
+#sign-up-toggle:checked ~ #login-toggle:not(:checked) ~ #login-panel form {
+  top: -180px;
+}
+
+#sign-up-toggle:checked ~ #login-toggle:not(:checked) ~ #login-panel button p {
+  top: -35px;
+}
+
+button:hover,
+label:hover {
+  background: none;
+}
