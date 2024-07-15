@@ -2,13 +2,15 @@
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Landing from './pages/landing'
-import Signin from './pages/signin'
+
 import Signup from './pages/signup'
 import Preview from './pages/preview'
 import Dashboard from './pages/dashboard'
 import Resume from './pages/preview/resume'
 import Projects from './pages/preview/projects'
 import Contact from './pages/preview/contact'
+
+import LogIn from './pages/logIn'
 
 function App() {
 
@@ -19,8 +21,8 @@ const router = createBrowserRouter([
   { path: '/',
     element: <Landing/>  
   },
-  { path: '/signin',
-    element: <Signin/> 
+  { path: '/login',
+    element:<LogIn/>
   },
   { path: '/signup',
     element: <Signup/> 
