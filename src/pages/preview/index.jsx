@@ -1,8 +1,13 @@
+import Hero from "./hero"
 
 
 const Preview = () => {
   return (
-    <div>Preview</div>
+
+      <Hero />
+      
+     
+      
   )
 }
 
