@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import PagesLayout from "../Layout/pagesLayout";
 import K from "../../../constants";
+import { Edit3Icon, Trash2Icon } from "lucide-react";
+
 
 
 const Skills = () => {
@@ -11,7 +13,23 @@ const Skills = () => {
 
       <div className="grid grid-cols-4 gap-6">
         
-         
+         {
+          K.SKILLS.map((skill,index )=> (
+            <div 
+            key={index} className="h-40 shadow-md rounded-xl flex flex-col p-5">
+              <span>{skill.name}</span>
+              <span>{skill.levelOfProficiency}</span>
+
+              <div className="ml-auto flex gap-x-2">
+                <span><Trash2Icon className="text-blue-600"/></span>
+
+                <span><Edit3Icon className="text-blue-600"/></span>
+              </div>
+            </div>
+          )
+
+          )
+         }
 
          
 
@@ -19,7 +37,7 @@ const Skills = () => {
         
         
       </div>
-      <span>All Skills here</span>
+      
     </PagesLayout>
   );
 

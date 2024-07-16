@@ -11,7 +11,7 @@ import Skills from './pages/dashboard/pages/skills'
 import Projects from './pages/dashboard/pages/projects'
 import Expericence from './pages/dashboard/pages/experience'
 import Achievements from './pages/dashboard/pages/achievements'
-import AddSkills from './pages/dashboard/pages/AddSkill'
+import AddSkill from './pages/dashboard/pages/AddSkill'
 import AddProject from './pages/dashboard/pages/AddProject'
 import AddExperience from './pages/dashboard/pages/AddExperience'
 import Education from './pages/dashboard/pages/education'
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/dashboard/skills/add-skill",
-        element:<AddSkills/>
+        element:<AddSkill/>
       },
       {
         path:"projects",
