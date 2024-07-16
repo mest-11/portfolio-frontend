@@ -2,91 +2,98 @@ import React from 'react'
 
 const AddProject = () => {
   return (
-    <div><form action="">
-    <div className="border-blue-400 shadow-lg ">
+    <div>
+      
+      <form action="">
+      <div className="border-blue-400 shadow-lg ">
+
+        <div>
+          <label htmlFor='Image'>Upload Image</label>
+          <input type='file' id='' />
+        </div>
 
 
         <div>
-            <label htmlFor='Profile Picture'>Upload Image</label>
-            <input type='file' id='' />
+        <label htmlFor='ProjectName'>Project Name</label>
+        <input type='text' placeholder=''/>
         </div>
 
         <div>
+          <label htmlFor="nstitution">Institution</label>
+          <select className='' placeholder="" />
 
-            <label htmlFor="location">Location</label>
-            <select className='' placeholder="" />
-            <option></option>
-            <option>Ghana</option>
-            <option>Nigeria</option>
-            <option>Canada</option>
-            <option>Germany</option>
-            <option>India</option>
-            <option>Norway</option>
-            <option>Germany</option>
+          <option></option>
+          <option>Ghana</option>
+          <option>Nigeria</option>
+          <option>Canada</option>
+          <option>Germany</option>
+          <option>India</option>
+          <option>Norway</option>
+          <option>Germany</option>
 
         </div>
 
         <div>
-            <label htmlFor="location">Location</label>
-            <select className='' placeholder="" />
-            <option></option>
-            <option>Male</option>
-            <option>Female</option>
+          <label htmlFor="location">Location</label>
+          <select className='' placeholder="" />
+          <option></option>
+          <option>Male</option>
+          <option>Female</option>
         </div>
 
         <div>
-            <label htmlFor="Gender">Gender</label>
-            <select className='' placeholder="" />
-            <option></option>
-            <option>Female</option>
-            <option>Male</option>
+          <label htmlFor="Gender">Gender</label>
+          <select className='' placeholder="" />
+          <option></option>
+          <option>Female</option>
+          <option>Male</option>
         </div>
 
         <div>
-            <label htmlFor="Bio">Bio</label>
-            <input type="text" className="" placeholder="" />
+          <label htmlFor="Bio">Bio</label>
+          <input type="text" className="" placeholder="" />
         </div>
 
         <div>
-            <label htmlFor='Contact'>Contact</label>
-            <input type='text' className='' />
+          <label htmlFor='Contact'>Contact</label>
+          <input type='text' className='' />
         </div>
 
         <div>
-            <label htmlFor="About">About</label>
-            <input type="text" className="" placeholder="" />
+          <label htmlFor="About">About</label>
+          <input type="text" className="" placeholder="" />
         </div>
 
         <div>
-            <label htmlFor="DateofBirth">Date Of Birth</label>
-            <input type="date" className="" placeholder="" />
+          <label htmlFor="DateofBirth">Date Of Birth</label>
+          <input type="date" className="" placeholder="" />
         </div>
 
         <div>
-            <label htmlFor='Language'>Languages</label>
-            <select className='' placeholder="" />
-            <option></option>
-            <option>English</option>
-            <option>French</option>
-            <option>Spanish</option>
-            <option>Italian</option>
-            <option>Chinese</option>
-            <option>Twi</option>
-            <option>Ga</option>
-            <option>Dagbani</option>
-            <option>Hausa</option>
-            <option>Yoruba</option>
-            <option>Bono</option>
+          <label htmlFor='Language'>Languages</label>
+          <select className='' placeholder="" />
+          <option></option>
+          <option>English</option>
+          <option>French</option>
+          <option>Spanish</option>
+          <option>Italian</option>
+          <option>Chinese</option>
+          <option>Twi</option>
+          <option>Ga</option>
+          <option>Dagbani</option>
+          <option>Hausa</option>
+          <option>Yoruba</option>
+          <option>Bono</option>
         </div>
 
         <div>
-            <button className=""><span className="truncate">Sunbmit</span>
-            </button>
+          <button className=""><span className="truncate">Sunbmit</span>
+          </button>
         </div>
+      </div>
+
+    </form>
     </div>
-
-</form>
-</div>
   )
 }
 
