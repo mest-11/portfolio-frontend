@@ -41,6 +41,29 @@ const K = {
          link:"/dashboard/social"
       },
       ],
+      SKILLS:
+      [
+         {
+            name:"JavaScript",
+            levelOfProficiency: "Beginner"
+         },
+         {
+            name:"Html",
+            levelOfProficiency: "Beginner"
+         },
+         {
+            name:"Python",
+            levelOfProficiency: "intermmediate"
+         },
+         {
+            name:"React",
+            levelOfProficiency: "Advanced"
+         },
+         {
+            name:"Vue",
+            levelOfProficiency: "Advanced"
+         },
+      ]
 };
 
 export default K;

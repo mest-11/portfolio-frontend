@@ -11,28 +11,6 @@ const AddBio = () => {
                     <input type='file' id='' />
                 </div>
 
-                <div>
-
-                    <label htmlFor="location">Location</label>
-                    <select className='' placeholder="" />
-                    <option></option>
-                    <option>Ghana</option>
-                    <option>Nigeria</option>
-                    <option>Canada</option>
-                    <option>Germany</option>
-                    <option>India</option>
-                    <option>Norway</option>
-                    <option>Germany</option>
-
-                </div>
-
-                <div>
-                    <label htmlFor="location">Location</label>
-                    <select className='' placeholder="" />
-                    <option></option>
-                    <option>Male</option>
-                    <option>Female</option>
-                </div>
 
                 <div>
                     <label htmlFor="Gender">Gender</label>

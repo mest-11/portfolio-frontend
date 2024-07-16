@@ -77,23 +77,6 @@ const AddProject = () => {
 
 
           <div>
-            <label htmlFor='Language'>Languages</label>
-            <select className='' placeholder="" />
-            <option></option>
-            <option>English</option>
-            <option>French</option>
-            <option>Spanish</option>
-            <option>Italian</option>
-            <option>Chinese</option>
-            <option>Twi</option>
-            <option>Ga</option>
-            <option>Dagbani</option>
-            <option>Hausa</option>
-            <option>Yoruba</option>
-            <option>Bono</option>
-          </div>
-
-          <div>
             <button className=""><span className="truncate">Sunbmit</span>
             </button>
           </div>
