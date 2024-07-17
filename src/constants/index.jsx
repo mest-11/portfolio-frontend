@@ -7,7 +7,7 @@ const K = {
    NAVLINKS: [
       {
          icon: <Home />,
-         text: "Home",
+         text: "Overview",
          link: "/dashboard"
       },
       {
@@ -66,7 +66,8 @@ const K = {
          },
       ],
 
-   OVERVIEW: [
+   OVERVIEW: 
+   [
       {
         icon:<NotebookPen/>,
         text:"skills",
@@ -93,6 +94,7 @@ const K = {
          total:100
       },
    ]
+   
 };
 
 export default K;

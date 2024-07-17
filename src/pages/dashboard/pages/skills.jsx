@@ -8,7 +8,7 @@ import { Edit3Icon, Trash2Icon } from "lucide-react";
 const Skills = () => {
   const navigate = useNavigate()
   return (
-    <PagesLayout headerText="Skills" buttonText="Add New Skill" onClick={() => 
+    <PagesLayout headerText="Skills" buttonText="Add New Skill" onClick={(onClick) => 
     navigate("/dashboard/skills/add-skill")}>
 
       <div className="grid grid-cols-4 gap-6">

@@ -6,7 +6,6 @@ import Signin from './pages/signin'
 import Signup from './pages/signup'
 import Preview from './pages/preview'
 import DashBoardLayout from './pages/dashboard/Layout/DashBoardLayout'
-import Overview from './pages/dashboard/pages/overview'
 import Skills from './pages/dashboard/pages/skills'
 import Projects from './pages/dashboard/pages/projects'
 import Expericence from './pages/dashboard/pages/experience'
@@ -19,8 +18,8 @@ import AddBio from './pages/dashboard/pages/AddBio'
 import AddAchievement from './pages/dashboard/pages/AddAchievement'
 import AddEducation from './pages/dashboard/pages/AddEducation'
 import Bio from './pages/dashboard/pages/bio'
-import Volunteering from './pages/dashboard/pages/volunteering'
-import AddVolunteering from './pages/dashboard/pages/AddVolunteering'
+import Overview from './pages/dashboard/pages/overview'
+
 
 function App() {
 
@@ -95,14 +94,6 @@ const router = createBrowserRouter([
         path:"/dashboard/achievements/add-achievement",
         element:<AddAchievement/>
       },
-      {
-        path:"volunteering",
-        element: <Volunteering />
-      },
-      {
-        path0:"dashboard/volunteering/add-volunteering",
-        element: <AddVolunteering />
-      }
       // {
       //   path:"/dasboard/volunteering/add-volunteering",
       //   element:<AddVolunteering/>

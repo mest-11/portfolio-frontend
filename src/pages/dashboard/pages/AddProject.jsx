@@ -5,16 +5,16 @@ const AddProject = () => {
     <div class="container">
       <h2>Create a New Project</h2>
 
-      <form className="">
+      <form className="border-portBlue">
 
-          <div className="">
-            <label htmlFor='Image'>Upload Image</label>
-            <input type='file' id='' />
-          </div>
+        <div className="">
+          <label htmlFor='Image'>Upload Image</label>
+          <input type='file' id='' />
+        </div>
 
         <div class="">
           <label for="projectName">Project Name</label>
-          <input type="text" id="projectName" name="projectName"/>
+          <input type="text" id="projectName" name="projectName" />
         </div>
 
         <div class="">
@@ -23,9 +23,9 @@ const AddProject = () => {
         </div>
 
         <div>
-            <label htmlFor='Contributors'>Contributors</label>
-            <input type='text' placeholder='' />
-          </div>
+          <label htmlFor='Contributors'>Contributors</label>
+          <input type='text' placeholder='' />
+        </div>
 
 
         <div class="">
@@ -39,49 +39,37 @@ const AddProject = () => {
         </div>
 
         <div>
-            <label htmlFor="skills">Skills</label>
-            <select className='' placeholder="" />
-            <option></option>
-            <option>Html</option>
-            <option>JavaScripts</option>
-            <option>Python</option>
-            <option>vue</option>
-            <option>Mongodb</option>
-            <option>React</option>
-          </div>
+          <label htmlFor="skills">Skills</label>
+          <select className='' placeholder="" />
+          <option></option>
+          <option>Html</option>
+          <option>JavaScripts</option>
+          <option>Python</option>
+          <option>vue</option>
+          <option>Mongodb</option>
+          <option>TailwindCSS</option>
+          <option>Bootstrap</option>
+        </div>
 
-          <div>
-            <label for="homepage">Add your homepage:</label>
-            <input type="url" id="homepage" name="homepage" className=''/>
-          </div>
+        <div>
+          <label for="homepage">Add your homepage:</label>
+          <input type="url" id="homepage" name="homepage" className='' />
+        </div>
 
-          <div>
-            <label htmlFor="Institution">Institution</label>
-            <select className='' placeholder="" />
+        <div>
+          <label htmlFor="Organisation">Organisation</label>
+          <input className='' placeholder="" />
 
-            <option></option>
-            <option>Kwame Nkrumah University of Science And Technology</option>
-            <option>University of Ghana</option>
-            <option>Kumasi Technical University</option>
-            <option>Ho Technical University</option>
-            <option>University of Mines</option>
-            <option>KnustFord University</option>
-            <option>Ashesi university</option>
-            <option>Central University</option>
-            <option>London University</option>
-            <option>Cambridge university</option>
-            <option>Dubai University</option>
+        </div>
 
-          </div>
-
-          <div class="">
+        <div class="">
           <label for="startDate">Start Date</label>
-          <input type="date" id="startDate" name="startDate"/>
+          <input type="date" id="startDate" name="startDate" />
         </div>
 
         <div class="">
           <label for="endDate">End Date</label>
-          <input type="date" id="endDate" name="endDate"/>
+          <input type="date" id="endDate" name="endDate" />
         </div>
 
 

@@ -9,7 +9,7 @@ const AddBio = () => {
                 <div className=''>
                     <div>
                         <label htmlFor='Profile Picture'>Upload Image</label>
-                        <input type='file' id=''  className='' placeholder=''/>
+                        <input type='file' id='' className='' placeholder='' />
                     </div>
 
 
@@ -42,6 +42,17 @@ const AddBio = () => {
                     </div>
 
                     <div>
+                        <label for="githubLink">GithubLink</label>
+                        <input type="url" id="githubLink" name="githubLink" className='' />
+                    </div>
+
+                    <div>
+                        <label for="homepage">LinkendinLink</label>
+                        <input type="url" id="linkedinlink" name="linkedlink" className='' />
+                    </div>
+
+
+                    <div>
                         <label htmlFor='Language'>Languages</label>
                         <select className='' placeholder="" />
                         <option></option>
@@ -59,7 +70,7 @@ const AddBio = () => {
                     </div>
 
                     <div>
-                        <button className=""><span className="truncate">Sunbmit</span>
+                        <button className=""><span className="truncate">Submit</span>
                         </button>
                     </div>
 
