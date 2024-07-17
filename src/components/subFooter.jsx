@@ -27,8 +27,8 @@ const SubFooter = () => {
 
                 <DownloadRsesume/>
 
-                <div className="pt-8">
-                    <span>All rights reserved to @ Monica, Donatus, Caroline & Kazia</span>
+                <div className="pt-8 w-[600px]">
+                    <span>All rights reserved to @ Monica, Donatus, Caroline & Kezia</span>
 
                 </div>
 

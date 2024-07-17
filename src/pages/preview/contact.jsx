@@ -1,4 +1,5 @@
 import ContactCard from "../../components/contactCard"
+import SubFooter from "../../components/subFooter"
 import SubNavBar from "../../components/subNavBar"
 
 const Contact = () => {
@@ -16,10 +17,11 @@ const Contact = () => {
           <ContactCard/>
           </div>
         </div>
+        
       </div>
 
 
-
+      <SubFooter/>
     </div>
 
   )
