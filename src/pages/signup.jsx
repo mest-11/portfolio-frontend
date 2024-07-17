@@ -1,54 +1,67 @@
 import { useForm } from "react-hook-form";
 import { apiCheckUsernameExist, apiSignUp } from "../services/auth"
 import { useEffect, useState } from "react";
-import { ColorRing } from 'react-loader-spinner';
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-
+import Loader from "../components/loader";
+import { debounce } from "lodash";
 
 
 const SignUp = () => {
-  const [usernameAvailable, setUsernameAvailable] =useState(false);
-  const [usernameNotAvailable, setUsernameNotAvailable] =useState(false);
-
+  const [usernameAvailable, setUsernameAvailable] = useState(false);
+  const [usernameNotAvailable, setUsernameNotAvailable] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isUsernameLoading, setIsUsernameLoading] = useState(false);
+  const navigate = useNavigate();
+ const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
-  const navigate = useNavigate()
-
-  const { register, handleSubmit,watch, formState: { errors } } = useForm();
-
-const checkUserName = async(userName)=>{
-  try {
-    const res = await apiCheckUsernameExist(userName);
-    console.log(res.data);
-const user = res.data.user
-if (user){
-setUsernameNotAvailable(true);
-}else{
-setUsernameAvailable(true);
-}
-
-
-  } catch (error) {
-    console.log(error);
+  const checkUserName = async (userName) => {
     
-  }
-};
+    setIsUsernameLoading(true)
+    try {
+      const res = await apiCheckUsernameExist(userName);
+      console.log(res.data);
+      const user = res.data.user
+      if (user) {
+        setUsernameNotAvailable(true);
+        setUsernameAvailable(false);
+      } else {
+        setUsernameAvailable(true);
+        setUsernameNotAvailable(false);
+      }
+      
+
+
+    } catch (error) {
+      console.log(error);
+      toast.error("An error occured");
+
+    } finally{
+      setIsUsernameLoading(false)
+    }
+  };
 
 
 
 
-  const userNameWatch = watch("userName")
-  console.log(userNameWatch);
+  const userNameWatch = watch("userName");
+  
 
   useEffect(
     () => {
-      if (userNameWatch){
-        checkUserName(userNameWatch);
+     const debouncedSearch = debounce(async() => {
+      if (userNameWatch) {
+       await checkUserName(userNameWatch);
       }
+     }, 1000);
+     debouncedSearch();
+
+     return () =>{
+      debouncedSearch.cancel();
+     }
     }
-  , [userNameWatch])
-  
+    , [userNameWatch]);
+
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -80,7 +93,7 @@ setUsernameAvailable(true);
 
     } catch (error) {
       console.log(error);
-      toast.error(error.message);
+      toast.error("An error occured");
     } finally {
       setIsSubmitting(false);
     }
@@ -92,7 +105,7 @@ setUsernameAvailable(true);
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-144 flex flex-col rounded-xl bg-white text-gray-700 shadow-md"
+        className="w-[400px] h-[450px] flex flex-col rounded-xl bg-white text-gray-700 shadow-md"
         noValidate
       >
         <div className="relative mx-4 -mt-6 mb-4 grid h-20 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-[#63AFFF] to-[#63AFFF] text-white shadow-lg shadow-[#63AFFF]/40">
@@ -156,12 +169,15 @@ setUsernameAvailable(true);
               Username
             </label>
             {errors.userName && (<p className="text-red-500">{errors.userName.message}</p>)}
-          {
-            usernameAvailable && <p className="text-blue-500">Username available!</p>
-          }
-          {
-            usernameNotAvailable && <p className="text-red-700">Username taken!</p>
-          }
+          <div className="flex items-center">
+            {isUsernameLoading && <Loader/>}
+            {
+              usernameAvailable &&( <p className="text-blue-500">Username available!</p>
+            )}
+            {
+              usernameNotAvailable && (<p className="text-red-700">Username taken!</p>
+            )} 
+          </div>
           </div>
           <div className="relative col-span-2">
             <input
@@ -212,15 +228,7 @@ setUsernameAvailable(true);
             type="submit"
             className="block w-full rounded-lg bg-portBlue hover:bg-portBlue py-3 text-center text-xs font-bold uppercase"
           >
-            {isSubmitting ? <ColorRing
-              visible={true}
-              height="20"
-              width="20"
-              ariaLabel="color-ring-loading"
-              wrapperStyle={{}}
-              wrapperClass="color-ring-wrapper"
-              colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-            /> : "Sign Up"}
+            {isSubmitting ? <Loader/> : "Sign Up"}
           </button>
           <p className="mt-4 flex justify-center text-sm font-light text-gray-700">
             Already have an account?
