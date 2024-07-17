@@ -26,18 +26,18 @@ const AddExperience = () => {
                 <input type="date" id="startDate" name="startDate" required/>
             </div>
 
-            <div class="form-group">
+            <div className="flex flex-col text-blue-600">
                 <label for="endDate">End Date</label>
                 <input type="date" id="endDate" name="endDate"/>
             </div>
 
-            <div class="form-group">
+            <div class="">
                 <label for="description">Description</label>
                 <textarea id="description" name="description" required></textarea>
             </div>
 
             <button type="submit">Submit Experience</button>
-            
+
         </form>
     </div>
   )

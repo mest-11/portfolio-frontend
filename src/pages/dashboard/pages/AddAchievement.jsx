@@ -5,16 +5,13 @@ const AddAchievement = () => {
     <div>
       <h2>Add New Achievement</h2>
       <form>
-        <label htmlFor='awards'>
-          Awards
-          <input
-            type="text"/>
-        </label>
+        <label htmlFor='awards'> Awards</label>
+        <input type="text" />
+
         <label>
           Description:
           <textarea
-            value={description}
-            // onChange={(e) => setDescription(e.target.value)}
+            placeholder=''
             rows={4} />
         </label>
         <button type="submit">Submit</button>
