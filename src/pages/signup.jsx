@@ -72,7 +72,7 @@ const SignUp = () => {
       userName: data.userName,
       email: data.email,
       password: data.password,
-      confirmedPassword: data.confirmedPassword
+      confirmPassword: data.confirmedPassword
 
     };
 

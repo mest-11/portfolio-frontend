@@ -6,6 +6,7 @@ import { apiGetEducation } from "../../../services/education";
 import { apiGetProjects } from "../../../services/projects";
 import { apiGetExperiences } from "../../../services/experiences";
 import Chart from 'chart.js/auto';
+import PagesLoader from "../../../components/pagesLoader";
 
 const Overview = () => {
   const chartRef = useRef(null);
@@ -25,16 +26,15 @@ const Overview = () => {
     setIsLoading(true);
     try {
       const [totalSkills, totalAchievements, totalEducation, totalExperiences, totalProjects] = await Promise.all([
-        apiGetSkills,
-        apiGetAchievements,
-        apiGetEducation,
-        apiGetExperiences,
-        apiGetProjects,
+        apiGetSkills(),
+        apiGetAchievements(),
+        apiGetEducation(),
+        apiGetExperiences(),
+        apiGetProjects(),
       ]);
 
-      useEffect(() => {
-
-      }, [])
+     
+      console.log("Total skills: ",totalSkills)
 
       const newData = {
         skills: totalSkills.length,
@@ -43,7 +43,9 @@ const Overview = () => {
         education: totalEducation.length,
         experiences: totalExperiences.length,
 
+
       }
+      console.log(newData);
 
       setdata(newData);
 
@@ -54,6 +56,10 @@ const Overview = () => {
     }
 
   };
+
+  useEffect(() => {
+    getData();
+          }, [])
 
   useEffect(() => {
     const ctx = chartRef.current.getContext('2d');
@@ -110,24 +116,28 @@ const Overview = () => {
   },[])
   
   return (
-    <div className="p-10 ">
-      <div className="grid grid-cols-5 gap-10">
-        {
-          K.OVERVIEW.map(({ icon, text, total }, index) => {
-            return <div key={index} className="h-40 shadow-md bg-white p-6 flex flex-col justify-between">
-              <div className="flex justify-between">
-                <span className="text-blue-600">{icon}</span>
-                <span className="text-blue-600 font-semibold">{text}</span>
-              </div>
-              <span className="text-2xl font-semibold">{total}</span>
+   <>
+   {
+    isLoading? <PagesLoader/>: <div className="p-10 ">
+    <div className="grid grid-cols-5 gap-10">
+      {
+        K.OVERVIEW.map(({ icon, text, total }, index) => {
+          return <div key={index} className="h-40 shadow-md bg-white p-6 flex flex-col justify-between">
+            <div className="flex justify-between">
+              <span className="text-blue-600">{icon}</span>
+              <span className="text-blue-600 font-semibold">{text}</span>
             </div>
+            <span className="text-2xl font-semibold">{total}</span>
+          </div>
 
-          })}
-      </div>
-      <div className="mt-20">
-        <canvas ref={chartRef} className="w-40"></canvas>
-      </div>
+        })}
     </div>
+    <div className="mt-20">
+      <canvas ref={chartRef} className="w-40"></canvas>
+    </div>
+  </div>
+   }
+   </>
 
   );
 };
