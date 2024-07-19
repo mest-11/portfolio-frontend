@@ -2,9 +2,44 @@ import React from 'react'
 import PagesLayout from '../Layout/pagesLayout'
 import { useNavigate } from 'react-router-dom'
 import { FolderOpenDot,} from 'lucide-react'
+import { apiGetProjects } from '../../../services/projects'
 
 const Project = () => {
   const navigate = useNavigate()
+  const [project, setProjects] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+  const [isDeleting, setIsDeleting] = useState(false)
+  const fetchProjects = async () => {
+    setIsLoading(true)
+    try {
+      const res = await apiGetProjects();
+      console.log(res.data);
+
+      setProjects(res.data.Projects);
+
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  const handleDelete = async (_id) => {
+    try {
+      const res = await apiDeleteP(_id)
+      console.log(res.data)
+      toast.success(res.data)
+
+    } catch (error) {
+      console.log(error)
+      toast.error("an error occured")
+
+    }
+  }
+  useEffect(() => {
+    fetchSkills()
+  }, [])
+
   return (
     <PagesLayout headerText="Projects" buttonText="Add New Project" onClick={() => navigate("/dashboard/project/add-project")}>
 

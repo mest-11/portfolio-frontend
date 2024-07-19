@@ -8,11 +8,11 @@ import PagesLoader from '../../../components/pagesLoader';
 
 
 const AddSkill = () => {
-<<<<<<< HEAD
+
 
   return (
     <div className="bg-[#F8F9FB] flex box-border place-content-center text-center">
-        <div className="layout-content-container flex flex-col w-[52px] py-2 max-w-[600px] flex-1 place-content-center border border-box border-50 border-blue-500 bg-inherit bg-blue-100">
+        <div className="layout-content-container flex flex-col w-[52px] py-2 max-w-[600px] flex-1 place-content-center border border-box border-50 border-blue-500 bg-inherit bg-blue-300">
         <h2 className="text-center place-content-center px-4 pb-3 pt-5">Create a New Skill</h2>
 
         <form className="border-portBlue">
@@ -34,43 +34,7 @@ const AddSkill = () => {
           </form>
         </div>
         </div>
-=======
-  const { register, handleSubmit, formState: { errors } } = useForm()
-  const [isSubmitting, setIsSubmitting]= useState(false)
-  const onSubmit = async(data)=>{
-    console.log(data)
-    setIsSubmitting(true);
 
-    try {
-      const res =await apiAddSkill({
-        name: data.name, levelOfProficiency: data.proficiency
-
-      })
-      
-      console.log(res.data);
-      toast.success(res.data.message)
-    } catch (error) {
-      console.log(error)
-      toast.error("An error occured")
-    }finally{
-      setIsSubmitting(false)
-    }
-  };
-  return (
-    <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col p-20 gap-y-5'>
-
-      <label htmlFor="">Skill</label>
-<input type="text" id="name" 
-{...register("name", {required: "Name is required"})}/>
-
-<label htmlFor="">Proficiency</label>
-<input type="proficiency"  id="proficiency" 
-{...register("proficiency", {required: " proficiency is required"})}/>
-
-<button type="submit">{isSubmitting? <PagesLoader/>:"Add Skill"}</button>
-
-    </form>
->>>>>>> d79e311f088d8342109a4fb6340f4fb197760229
   )
 }
 
