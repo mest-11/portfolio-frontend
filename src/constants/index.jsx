@@ -1,4 +1,4 @@
-import { FolderOpenDot, GraduationCap, Home, Linkedin, NotebookPen, ScrollText, Trophy, UserRound } from "lucide-react";
+import { FolderOpenDot, GraduationCap, Home, Linkedin, NotebookPen, ScanEye, ScrollText, Trophy, UserRound } from "lucide-react";
 
 
 
@@ -40,6 +40,11 @@ const K = {
          text: "Education",
          link: "/dashboard/education"
       },
+      {
+         icon:<ScanEye/>,
+         text:"Preview",
+         link:"/preview"
+      }
    ],
 
    SKILLS:
@@ -92,6 +97,14 @@ const K = {
          icon:<FolderOpenDot/>,
          text:"projects",
          total:100
+      },
+   ],
+   EDUCATION:
+   [
+      {
+         icon:<GraduationCap/>,
+         name:"Kwame Nkrumah University of Science And TEchnology",
+         Degree:3
       },
    ]
    
