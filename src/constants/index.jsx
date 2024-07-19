@@ -13,7 +13,7 @@ const K = {
       {
          icon: <UserRound />,
          text: "Bio",
-         link: "/dashboard/Bio"
+         link: "/dashboard/bio"
       },
       {
          icon: <Trophy />,
@@ -66,35 +66,35 @@ const K = {
          },
       ],
 
-   OVERVIEW: 
-   [
-      {
-        icon:<NotebookPen/>,
-        text:"skills",
-        total:10
-      },
-      {
-         icon:<GraduationCap/>,
-         text:"education",
-         total:3
-      },
-      {
-         icon:<Trophy/>,
-         text:"achievements",
-         total:20
-      },
-      {
-         icon:<ScrollText/>,
-         text:"experience",
-         total:50
-      },
-      {
-         icon:<FolderOpenDot/>,
-         text:"projects",
-         total:100
-      },
-   ]
-   
+   OVERVIEW:
+      [
+         {
+            icon: <NotebookPen />,
+            text: "skills",
+            total: 10
+         },
+         {
+            icon: <GraduationCap />,
+            text: "education",
+            total: 3
+         },
+         {
+            icon: <Trophy />,
+            text: "achievements",
+            total: 20
+         },
+         {
+            icon: <ScrollText />,
+            text: "experience",
+            total: 50
+         },
+         {
+            icon: <FolderOpenDot />,
+            text: "projects",
+            total: 100
+         },
+      ]
+
 };
 
 export default K;

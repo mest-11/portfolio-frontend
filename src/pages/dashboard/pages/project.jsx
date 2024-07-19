@@ -1,9 +1,9 @@
 import React from 'react'
 import PagesLayout from '../Layout/pagesLayout'
 import { useNavigate } from 'react-router-dom'
-import { FolderOpenDot, ScrollText } from 'lucide-react'
+import { FolderOpenDot,} from 'lucide-react'
 
-const Projects = () => {
+const Project = () => {
   const navigate = useNavigate()
   return (
     <PagesLayout headerText="Projects" buttonText="Add New Project" onClick={() => navigate("/dashboard/project/add-project")}>
@@ -35,4 +35,4 @@ const Projects = () => {
   )
 }
 
-export default Projects
+export default Project

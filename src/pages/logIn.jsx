@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {toast} from "react-toastify"
 import Loader from "../components/loader";
-import { Mail, MailCheck } from "lucide-react";
+
 
 const LogIn = () => {
 
@@ -27,8 +27,9 @@ const LogIn = () => {
         password: data.password
       })
       console.log("Response: ", res.data);
+      localStorage.setItem("accessToken",res.data.accessToken);
 
-      toast.success(res.data)
+      toast.success(res.data.message)
       setTimeout(()=>{
            // redirecting to dashboard
 
