@@ -7,18 +7,18 @@ const Experience = () => {
 
      
             <div className=" flex">
-                <div className="w-1/2">
+                <div className="w-1/4">
                 <span className="text-[22px] font-medium">Work <br />
                 Experience</span>
 
                 </div>
 
-                <div className="flex flex-col gap-y-10 w-1/2"> 
+                <div className="flex flex-col gap-y-10 w-3/4"> 
                 <ExperienceCard />
                 <ExperienceCard/>
                 <ExperienceCard/>
-                <ExperienceCard/>
-                <ExperienceCard/>
+                {/* <ExperienceCard/>
+                <ExperienceCard/> */}
 
                 
                 </div>
