@@ -6,7 +6,7 @@ const Sidebar = () => {
     return (
         <div className=" h-screen w-[300px] bg-portBlue shadow-2xl flex flex-col px-8 py-12">
             <div>   
-                <span className="text-3xl font-bold text-white text-center">Port<b className='text-purple-600'>folio</b></span>
+                <span className="text-3xl font-bold text-white text-center">Port<b className='text-orange-300'>folio</b></span>
                 {/* <img src=" alt=" /> */}
             </div>
 
