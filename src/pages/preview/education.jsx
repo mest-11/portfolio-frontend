@@ -15,8 +15,8 @@ const Education = () => {
         <div className="flex flex-col gap-y-10 w-3/4"> 
         <EducationCard/>
         <EducationCard/>
-        <EducationCard/>
-        <EducationCard/>
+        {/* <EducationCard/>
+        <EducationCard/> */}
      
         
         </div>

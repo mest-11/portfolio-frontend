@@ -14,7 +14,7 @@ const Hero = () => {
                     <div className="flex flex-col justify-center w-[50%] slide-in-bottom">
                         <span className="text-[5rem] antialiased font">Hello</span>
                         <span className="text-[22px] font-medium antialiased">About me</span>
-                        <span className="text-[20px] antialiased">Frontend developer with expertise in React and Tailwind CSS. Skilled in creating responsive and user-friendly web applications.
+                        <span className="text-[20px] antialiased">I am a frontend developer with expertise in React and Tailwind CSS. Skilled in creating responsive and user-friendly web applications.
                         </span>
 
 

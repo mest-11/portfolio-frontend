@@ -6,8 +6,11 @@ const ExperienceCard = () => {
     <span className="w-[300px]">2035 - Present</span>
 
     <div className="flex flex-col">
-        <span className="font-medium text-[16px]">Administrative Assistant | Organization</span>
-        <p> I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.</p>
+        <span className="font-medium text-[16px]">Administrative Assistant | University of Ghana</span>
+        <p> I provided administrative support to the project, 
+Set up and managed correspondence and meetings with project funders and stakeholders 
+and Kept and managed project records
+</p>
     </div>
      
 

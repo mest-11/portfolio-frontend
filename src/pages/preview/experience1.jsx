@@ -17,8 +17,8 @@ const Experience = () => {
                 <ExperienceCard />
                 <ExperienceCard/>
                 <ExperienceCard/>
-                <ExperienceCard/>
-                <ExperienceCard/>
+                {/* <ExperienceCard/>
+                <ExperienceCard/> */}
 
                 
                 </div>
