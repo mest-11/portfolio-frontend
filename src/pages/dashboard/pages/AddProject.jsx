@@ -3,13 +3,15 @@ import PagesLayout from '../Layout/pagesLayout'
 
 const AddProject = () => {
   return (
-    <PagesLayout headerText="Project" buttonText="Add Project" onClick={() => 
-      navigate("/dashboard/project/add-project")}>
+  
+
     <div className="relative flex size-full min-h-screen flex-col bg-[#F8F9FB] overflow-hidden">
 
       <div className="bg-[#F8F9FB] flex box-border place-content-center text-center">
-        <div className="layout-content-container flex flex-col w-[52px] py-2 max-w-[600px] flex-1 place-content-center border border-box border-50 border-blue-500 bg-inherit bg-blue-100">
-          <h2 className="text-center place-content-center px-4 pb-3 pt-5">Create a New Project</h2>
+
+        <div className="flex flex-col py-10 max-w-[600px] flex-1 place-content-center border border-dotted border-blue-500 bg-blue-100">
+
+          <h2 className="text-center place-content-center px-4 pb-3 pt-2 font-bold">Create a New Project</h2>
 
           <form className="border-portBlue">
 
@@ -19,13 +21,13 @@ const AddProject = () => {
             </div>
 
             <div class="">
-              <label for="projectName">Project Name</label>
-              <input type="text" id="projectName" name="projectName" className='px-4 text-center pb-2 pt-1 focus:outline-0 focus:ring-0 border-[2px] rounded-md border-blue-500 h-7 m-2' placeholder='Enter Project Name' />
+              <label for="projectName" >Project Name</label>
+              <input type="text" id="projectName" name="projectName" className='px-4 text-center pb-2 pt-1 border-[2px] rounded-md border-blue-500 h-7 m-2' placeholder='Enter Project Name' />
             </div>
 
             <div class="">
               <label htmlfor="projectDescription">Project Description</label>
-              <textarea id="projectDescription" name="projectDescription" className='px-4 rounded-md text-center pb-5 pt-2 focus:outline-0 focus:ring-0 border-[2px] border-blue-500 h-10 m-4' placeholder='Text Here'/>
+              <textarea id="projectDescription" name="projectDescription" className='px-4 rounded-md text-center pb-5 pt-2 border-[2px] border-blue-500 h-10 m-4' placeholder='Text Here'/>
             </div>
 
             <div>
@@ -77,7 +79,7 @@ const AddProject = () => {
         </div>
       </div>
     </div>
-    </PagesLayout>
+  
   )
 }
 

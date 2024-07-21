@@ -96,7 +96,7 @@ function App() {
         },
         {
           path: "/dashboard/achievements/add-achievement",
-          element: <AddAchievement />
+          element: <AddAchievement/>
         },
         // {
         //   path:"/dasboard/volunteering/add-volunteering",
