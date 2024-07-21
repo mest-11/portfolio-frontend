@@ -1,7 +1,10 @@
 import React from 'react'
+import PagesLayout from '../Layout/pagesLayout'
 
 const AddProject = () => {
   return (
+    <PagesLayout headerText="Project" buttonText="Add Project" onClick={() => 
+      navigate("/dashboard/project/add-project")}>
     <div className="relative flex size-full min-h-screen flex-col bg-[#F8F9FB] overflow-hidden">
 
       <div className="bg-[#F8F9FB] flex box-border place-content-center text-center">
@@ -74,6 +77,7 @@ const AddProject = () => {
         </div>
       </div>
     </div>
+    </PagesLayout>
   )
 }
 

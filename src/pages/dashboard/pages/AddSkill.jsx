@@ -9,9 +9,9 @@ import PagesLoader from '../../../components/pagesLoader';
 
 const AddSkill = () => {
 
-
   return (
     <div className="bg-[#F8F9FB] flex box-border place-content-center text-center">
+      
         <div className="layout-content-container flex flex-col w-[52px] py-2 max-w-[600px] flex-1 place-content-center border border-box border-50 border-blue-500 bg-inherit bg-blue-300">
         <h2 className="text-center place-content-center px-4 pb-3 pt-5">Create a New Skill</h2>
 

@@ -56,8 +56,10 @@ const Skills = () => {
 
                   {
                     Skills.map((skill, index) => (
+                      
                       <div
                         key={index} className="h-40 shadow-md rounded-xl flex flex-col p-5">
+                          
                         <span className="text-blue-600 animate-pulse text-center">{skill.name}</span>
                         <span className="hover:text-blue-600 text-center">{skill.levelOfProficiency}</span>
 

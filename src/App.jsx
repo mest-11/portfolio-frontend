@@ -63,8 +63,8 @@ function App() {
           element: <Project />
         },
         {
-          path: "projects/add-project",
-          element: <AddProject />
+          path: "project/add-project",
+          element: <AddProject/>
         },
         {
           path: "experience",
