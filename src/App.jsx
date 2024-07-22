@@ -13,15 +13,16 @@ import AddSkill from './pages/dashboard/pages/AddSkill'
 import AddProject from './pages/dashboard/pages/AddProject'
 import AddExperience from './pages/dashboard/pages/AddExperience'
 import Education from './pages/dashboard/pages/education'
-import AddBio from './pages/dashboard/pages/AddBio'
+import AddBio from './pages/dashboard/pages/AddProfile'
 import AddAchievement from './pages/dashboard/pages/AddAchievement'
 import AddEducation from './pages/dashboard/pages/AddEducation'
-import Bio from './pages/dashboard/pages/bio'
 import Resume from './pages/preview/resume'
 import Projects from './pages/preview/projects'
 import Contact from './pages/preview/contact'
 import LogIn from './pages/logIn'
 import Overview from './pages/dashboard/pages/overview'
+import Profile from './pages/dashboard/pages/profile'
+import AddProfile from './pages/dashboard/pages/AddProfile'
 
 function App() {
 
@@ -80,15 +81,15 @@ function App() {
         },
         {
           path: "/dashboard/education/add-education",
-          element: <AddEducation />
+          element: <AddEducation/>
         },
         {
-          path: "bio",
-          element: <Bio />
+          path: "profile",
+          element: <Profile/>
         },
         {
-          path: "/dashboard/bio/add-bio",
-          element: <AddBio />
+          path: "/dashboard/profile/add-profile",
+          element: <AddProfile/>
         },
         {
           path: "achievements",

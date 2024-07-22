@@ -2,11 +2,11 @@ import React from 'react'
 import PagesLayout from '../Layout/pagesLayout'
 import { useNavigate } from 'react-router-dom'
 
-const Bio = () => {
+const Profile = () => {
 
   return (
-    <PagesLayout headerText="Bio" buttonText="Add Bio" onClick={() => 
-      navigate("/dashboard/bio/add-bio")}>
+    <PagesLayout headerText="Profile" buttonText="Add Profile" onClick={() => 
+      navigate("/dashboard/profile/add-profile")}>
       <div className="display block">
         <div>
           
@@ -18,4 +18,4 @@ const Bio = () => {
   )
 }
 
-export default Bio
+export default Profile

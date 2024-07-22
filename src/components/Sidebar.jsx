@@ -1,11 +1,22 @@
 import K from '../constants'
-import { Link } from 'react-router-dom'
+import {NavLink, useNavigate } from 'react-router-dom'
 import { LogOutIcon } from 'lucide-react'
 
 const Sidebar = () => {
+    const navigate = useNavigate()
+
+    const logout = async () => {
+        try {
+            await apilogout();
+            toast.success("Logged out successfully");
+            navigate("/login");
+        } catch (error) {
+            toast.error("An error occured");
+        }
+    };
     return (
-        <div className=" h-screen w-[300px] bg-portBlue shadow-2xl flex flex-col px-8 py-12">
-            <div>   
+        <div className=" h-screen w-[300px] bg-portBlue shadow flex flex-col px-8 py-12">
+            <div>
                 <span className="text-3xl font-bold text-white text-center">Port<b className='text-orange-300'>folio</b></span>
                 {/* <img src=" alt=" /> */}
             </div>
@@ -13,23 +24,27 @@ const Sidebar = () => {
             <div className="flex flex-col gap-y-3 mt-12">
                 {
                     K.NAVLINKS.map(({ icon, text, link }, index) => (
-                        <Link
+                        <NavLink
                             to={link}
-                            key={index} className='flex gap-x-4 items-center hover:bg-portBlue hover:text-white hover:rounded-md'>
+                            key={index} className={({isActive})=>`flex gap-x-4 items-center hover:bg-portBlue hover:text-white hover:rounded-md p-2 ${isActive ? "bg-portblue" : ""}`
+                    }
+                    end
+                    >
                             <span className="bg-portBlue text-white p-2 rounded-full">
                                 {icon}
                             </span>
                             <span>{text}</span>
-                        </Link>
+                        </NavLink>
                     )
 
                     )
                 }
             </div>
-            <button className="flex gap-x-4 items-center mt-auto hover:bg-white hover:rounded">
-                <div className="bg-portBlue text-white p-2 rounded-full">
-                    <LogOutIcon/>
-                </div>
+            <button className="flex gap-x-4 items-center mt-auto hover:bg-white hover:rounded-md p-2" onClick={logout}
+            >
+                <span className="bg-portBlue text-white p-2 rounded-full">
+                    <LogOutIcon />
+                </span>
                 <span>Logout</span>
             </button>
         </div>

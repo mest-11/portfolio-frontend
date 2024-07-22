@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AddBio = () => {
+const AddProfile = () => {
     return (
 
         <div className=" ">
@@ -84,4 +84,4 @@ const AddBio = () => {
     )
 }
 
-export default AddBio
+export default AddProfile

@@ -100,14 +100,7 @@ const K = {
          total:100
       },
    ],
-   EDUCATION:
-   [
-      {
-         icon:<GraduationCap/>,
-         name:"Kwame Nkrumah University of Science And TEchnology",
-         Degree:3
-      },
-   ]
+
    
 };
 
