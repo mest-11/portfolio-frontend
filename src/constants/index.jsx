@@ -1,4 +1,4 @@
-import { FolderOpenDot, GraduationCap, Home, Linkedin, NotebookPen, ScrollText, Trophy, UserRound } from "lucide-react";
+import { FolderOpenDot, GraduationCap, Home, Linkedin, NotebookPen, ScanEye, ScrollText, Trophy, UserRound } from "lucide-react";
 
 
 
@@ -39,6 +39,11 @@ const K = {
          icon: <GraduationCap />,
          text: "Education",
          link: "/dashboard/education"
+      },
+      {
+         icon: <ScanEye/>,
+         text: "Preview",
+         link: "/preview"
       },
    ],
 
