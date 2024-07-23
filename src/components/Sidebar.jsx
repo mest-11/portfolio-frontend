@@ -1,13 +1,14 @@
 import K from '../constants'
 import {NavLink, useNavigate } from 'react-router-dom'
 import { LogOutIcon } from 'lucide-react'
+import { apiLogout } from '../services/auth';
 
 const Sidebar = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const logout = async () => {
         try {
-            await apilogout();
+            await apiLogout();
             toast.success("Logged out successfully");
             navigate("/login");
         } catch (error) {
