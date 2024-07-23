@@ -30,7 +30,7 @@ const Sidebar = () => {
                     }
                     end
                     >
-                            <span className="bg-portBlue text-white p-2 rounded-full">
+                            <span className="text-white p-2 rounded-full">
                                 {icon}
                             </span>
                             <span>{text}</span>
@@ -42,7 +42,7 @@ const Sidebar = () => {
             </div>
             <button className="flex gap-x-4 items-center mt-auto hover:bg-white hover:rounded-md p-2" onClick={logout}
             >
-                <span className="bg-portBlue text-white p-2 rounded-full">
+                <span className="text-white p-2 rounded-full">
                     <LogOutIcon />
                 </span>
                 <span>Logout</span>

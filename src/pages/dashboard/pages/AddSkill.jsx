@@ -18,7 +18,7 @@ const AddSkill = () => {
 
         <h2 className="text-center place-content-center px-4 pb-3 pt-2 font-bold">Create a New Skill</h2>
 
-        <form className="border-portBlue">
+        <form>
 
           
             <div className="flex items-center place-content-center px-5 py-2">

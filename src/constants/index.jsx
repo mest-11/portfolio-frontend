@@ -12,8 +12,8 @@ const K = {
       },
       {
          icon: <UserRound />,
-         text: "Bio",
-         link: "/dashboard/bio"
+         text: "Profile",
+         link: "/dashboard/profile"
       },
       {
          icon: <Trophy />,

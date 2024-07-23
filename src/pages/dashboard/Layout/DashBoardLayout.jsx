@@ -37,11 +37,11 @@ const DashBoardLayout = () => {
     return initials.toUpperCase();
   };
   return (
-    <div className='flex bg-portBlue'>
+    <div className='flex'>
       <Sidebar />
       <div className='w-full'>
-        <div className='flex px-16 py-5 shadow items-center'>
-        <span className="p-3 bg-pink text-white rounded-full shadow-md hover:bg-white hover:text-pink">
+        <div className='flex px-16 py-5 shadow items-center bg-orange-200'>
+        <span className="p-3  bg-portBlue text-blue rounded-full shadow-md hover:bg-white hover:text-blue">
             <SquareMenu className="size-8" />
           </span>
           <Link
