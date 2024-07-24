@@ -13,7 +13,7 @@ const SignUp = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isUsernameLoading, setIsUsernameLoading] = useState(false);
   const navigate = useNavigate();
- const { register, handleSubmit, watch, formState: { errors } } = useForm();
+ const { register, handleSubmit, watch, formState: { errors } } = useForm({ reValidateMode: "onBlur", mode: "all" });
 
   const checkUserName = async (userName) => {
     
