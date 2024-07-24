@@ -1,7 +1,27 @@
 import { GitBranch, Linkedin } from "lucide-react";
 import CardImage from "../assets/images/myImg.jpeg"
+import { apiGetUserDetails } from "../services/preview";
+import { useState } from "react";
 
 const ContactCard = () => {
+  const [user, setUser] = useState({});
+
+  const getUser = async () => {
+      const userDetails = await apiGetUserDetails("donatus")
+
+      setUser(userDetails)
+
+      console.log("userprofile", userDetails)
+      console.log("user", userDetails)
+
+  }
+
+
+  getUser()
+
+  if (!user) {
+    return "null"
+}
     return (
       <div className="profile-card w-[350px] rounded-md shadow-xl overflow-hidden z-[100] relative cursor-pointer snap-start shrink-0 bg-white flex flex-col items-center justify-center gap-3 transition-all duration-300 group">
         <div className="avatar w-full pt-5 flex items-center justify-center flex-col gap-1">
@@ -15,7 +35,7 @@ const ContactCard = () => {
           </div>
         </div>
         <div className="headings *:text-center *:leading-4">
-          <p className=" font-serif font-semibold text-[#434955] text-[13px]">MONICA EDEM KOKOVENA</p>
+          <p className=" font-serif font-semibold text-[#434955] text-[13px]">{`${user.firstName} ${user.middleName} ${user.lastName}`}</p>
           <p className="text-sm font-semibold text-[#434955]"> FRONTEND DEVELOPER</p>
         </div>
         <div className="w-full items-center justify-center flex">
@@ -32,7 +52,7 @@ const ContactCard = () => {
                 <path d="M16,14.81,28.78,6.6A3,3,0,0,0,27,6H5a3,3,0,0,0-1.78.6Z" fill="#231f20"></path>
                 <path d="M16.54,16.84h0l-.17.08-.08,0A1,1,0,0,1,16,17h0a1,1,0,0,1-.25,0l-.08,0-.17-.08h0L2.1,8.26A3,3,0,0,0,2,9V23a3,3,0,0,0,3,3H27a3,3,0,0,0,3-3V9a3,3,0,0,0-.1-.74Z" fill="#231f20"></path>
               </svg>
-              <a href="mailto:monicaekokovena@gmail.com">monicaekokovena@gmail.com</a>
+              <a href="mailto:">{user.email}</a>
             </li>
             <li>
              <Linkedin className="fill-stone-700 group-hover:fill-[#58b0e0]" size={15} />

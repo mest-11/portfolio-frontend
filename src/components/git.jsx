@@ -1,8 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { apiGetUserDetails } from '../services/preview';
 
 const Git = () => {
+  
+  const [user, setUser] = useState({});
+
+  const getUser = async () => {
+      const userDetails = await apiGetUserDetails("donatus")
+
+      setUser(userDetails)
+
+      console.log("userprofile", userDetails)
+      console.log("user", userDetails)
+
+  }
+
+
+  getUser()
+
+  if (!user) {
+    return "null"
+}
+  
   return (
     <section class="flex justify-center items-center">
+      
     <button
       class="group flex justify-center p-2 rounded-md drop-shadow-xl bg-gradient-to-r from-gray-800 to-black text-white font-semibold hover:translate-y-3 hover:rounded-[50%] transition-all duration-500 hover:from-[#331029] hover:to-[#310413]"
       href="/"

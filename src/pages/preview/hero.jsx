@@ -1,8 +1,35 @@
 import SubNavBar from "../../components/subNavBar"
 import MyImg from "../../assets/images/myImg2.jpeg"
 import SubFooter from "../../components/subFooter"
+import { apiGetUserDetails } from "../../services/preview"
+import { useEffect, useState } from "react"
 
 const Hero = () => {
+    const [user, setUser] = useState({});
+
+    const getUser = async () => {
+        const userDetails = await apiGetUserDetails("donatus")
+
+        setUser(userDetails)
+
+        console.log("userprofile", userDetails)
+        console.log("user", userDetails)
+
+    }
+
+
+    getUser()
+
+
+    useEffect(() => {
+       
+    })
+
+    if (!user) {
+        return "null"
+    }
+
+
     return (
         <div className="bg-[#F3F3F3]">
             <SubNavBar />
@@ -14,7 +41,7 @@ const Hero = () => {
                     <div className="flex flex-col justify-center w-[50%] slide-in-bottom">
                         <span className="text-[5rem] antialiased font">Hello</span>
                         <span className="text-[22px] font-medium antialiased">About me</span>
-                        <span className="text-[20px] antialiased">I am a frontend developer with expertise in React and Tailwind CSS. Skilled in creating responsive and user-friendly web applications.
+                        <span className="text-[20px] antialiased">{user.userProfile?.about}
                         </span>
 
 

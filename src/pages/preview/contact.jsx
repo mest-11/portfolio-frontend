@@ -3,6 +3,8 @@ import SubFooter from "../../components/subFooter"
 import SubNavBar from "../../components/subNavBar"
 
 const Contact = () => {
+
+  
   return (
     <div>
       <SubNavBar />
