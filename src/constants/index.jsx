@@ -1,4 +1,4 @@
-import { FolderOpenDot, GraduationCap, Home, Linkedin, NotebookPen, ScanEye, ScrollText, Trophy, UserRound } from "lucide-react";
+import { FolderOpenDot, GraduationCap, Home, Linkedin, NotebookPen, ScanEye, ScrollText, Trophy, University, UserRound } from "lucide-react";
 
 
 
@@ -101,7 +101,42 @@ const K = {
       },
    ],
 
-   
+   EDUCATION:
+   [
+      {
+         name:"Kwame Nkrumah University of Science And Technology",
+         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dolor id ligula semper elementum feugiat pretium nulla.",
+         date:1999-2002
+      },
+      {
+         name:"Kwame Nkrumah University of Science And Technology",
+         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dolor id ligula semper elementum feugiat pretium nulla.",
+         date:2012-2016
+      },
+      {
+         name:"Harvard University",
+         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dolor id ligula semper elementum feugiat pretium nulla.",
+         date:2002-2004
+      },
+      {
+         name: "University of Ghana",
+         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dolor id ligula semper elementum feugiat pretium nulla.",
+         date:2025-2029
+      },
+      {
+         name:"Kwame Nkrumah University of Science And Technology",
+         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dolor id ligula semper elementum feugiat pretium nulla.",
+         date:2012-2016
+      },
+   ],
+   PROJECTS:
+   [
+      {
+               icon:<FolderOpenDot/>,
+               awards: "Best Designer of the Year",
+               description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dolor id ligula semper elementum feugiat pretium nulla.",
+      },
+   ]
 };
 
 export default K;

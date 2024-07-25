@@ -14,7 +14,7 @@ const AddEducation = () => {
 
 
             <div className='flex items-center place-content-center px-5 py-2'>
-              <label htmlFor="schoolName">School Name</label>
+              <label htmlFor="schoolName">Institution</label>
               <input type='text' id="schoolName" name="schoolName" className='rounded-md text-center pb-5 pt-2 border-[2px] border-blue-500 h-7 m-4' placeholder='Enter Here' />
 
             </div>
@@ -44,7 +44,7 @@ const AddEducation = () => {
               <input type="date" id="startDate" name="startDate" className='px-4 text-center pb-2 pt-1 focus:outline-0 focus:ring-0 border-[2px] rounded-md border-blue-500 h-7 m-2' />
             </div>
 
-            <button type="submit" className="animate-bounce rounded-md px-4 text-center pb-5 pt-1 focus:outline-0 focus:ring-0 border-[2px] border-blue-500 h-5 m-2 hover:bg-white"> Create </button>
+            <button type="submit" className="animate-bounce rounded-md px-4 text-center pb-5 pt-1 focus:outline-0 focus:ring-0 border-[2px] border-blue-500 h-5 m-2 hover:bg-white"> Submit </button>
           </form>
         </div>
       </div>

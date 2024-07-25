@@ -12,6 +12,6 @@ export const apiLogout = async () => {
     clearToken();
   };
 
-export const apiCheckUsernameExists = async(userName) =>{
+export const apiCheckUsernameExist = async(userName) =>{
     return apiClient.get(`/${userName}`);
 };

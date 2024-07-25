@@ -5,10 +5,12 @@ import { Edit2Icon, ScrollText } from "lucide-react"
 
 
 const Education = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <PagesLayout headerText="Education" buttonText="Add New Education" onClick={() =>
       navigate("/dashboard/education/add-education")}>
+         
+
 
       <div className="grid grid-cols-2 gap-6">
 

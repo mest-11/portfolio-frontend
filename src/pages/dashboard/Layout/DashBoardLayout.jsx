@@ -41,12 +41,12 @@ const DashBoardLayout = () => {
       <Sidebar />
       <div className='w-full'>
         <div className='flex px-16 py-5 shadow items-center bg-orange-200'>
-        <span className="p-3  bg-portBlue text-blue rounded-full shadow-md hover:bg-white hover:text-blue">
+        {/* <span className="p-3  bg-portBlue text-blue rounded-full shadow-md hover:bg-white hover:text-blue"> */}
             <SquareMenu className="size-8" />
-          </span>
+          {/* </span> */}
           <Link
           to= "/dashboard/profile"
-          className="ml-auto bg-blue-300 p-4 rounded-full cursor-pointer">
+          className="ml-auto bg-blue-300 p-4">
             <span  className="text-xl font-semibold text-white">
             {getAvatar()}
             </span>

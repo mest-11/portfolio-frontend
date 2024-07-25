@@ -16,7 +16,7 @@ const Sidebar = () => {
         }
     };
     return (
-        <div className=" h-screen w-[300px] bg-portBlue shadow flex flex-col px-8 py-12">
+        <div className=" h-full w-[300px] bg-portBlue shadow flex flex-col px-8 py-12  transition transition: width 0.3s ease;">
             <div>
                 <span className="text-3xl font-bold text-white text-center">Port<b className='text-orange-300'>folio</b></span>
                 {/* <img src=" alt=" /> */}
