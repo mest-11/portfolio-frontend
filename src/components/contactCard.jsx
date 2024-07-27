@@ -1,27 +1,40 @@
 import { GitBranch, Linkedin } from "lucide-react";
 import CardImage from "../assets/images/myImg.jpeg"
 import { apiGetUserDetails } from "../services/preview";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ContactCard = () => {
   const [user, setUser] = useState({});
+   
+    const [loading, setLoading] = useState(true);
 
-  const getUser = async () => {
-      const userDetails = await apiGetUserDetails("donatus")
+    useEffect(() => {
+        const getUser = async ()=>{
+            
+            try {
+                setLoading(true);
+                const userDetails = await apiGetUserDetails("donatus")
+                console.log('hhhh', userDetails)
+                setUser(userDetails)
+                
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                
+            } finally{
+                setLoading(false);
+            }
+        }
 
-      setUser(userDetails)
+        getUser();
+    }, []);
 
-      console.log("userprofile", userDetails)
-      console.log("user", userDetails)
+    if (loading){
+        return <div>loading...</div>;
+    }
 
-  }
+ 
 
-
-  getUser()
-
-  if (!user) {
-    return "null"
-}
+console.log("skills",user)
     return (
       <div className="profile-card w-[350px] rounded-md shadow-xl overflow-hidden z-[100] relative cursor-pointer snap-start shrink-0 bg-white flex flex-col items-center justify-center gap-3 transition-all duration-300 group">
         <div className="avatar w-full pt-5 flex items-center justify-center flex-col gap-1">
@@ -35,8 +48,8 @@ const ContactCard = () => {
           </div>
         </div>
         <div className="headings *:text-center *:leading-4">
-          <p className=" font-serif font-semibold text-[#434955] text-[13px]">{`${user.firstName} ${user.middleName} ${user.lastName}`}</p>
-          <p className="text-sm font-semibold text-[#434955]"> FRONTEND DEVELOPER</p>
+          <p className=" font-serif font-semibold text-[#434955] text-[13px]">{`${user.firstName} ${user.lastName}`}</p>
+          <p className="text-sm font-semibold text-[#434955]">{user.userProfile?.bio}</p>
         </div>
         <div className="w-full items-center justify-center flex">
           <ul className="flex flex-col items-start gap-2 has-[:last]:border-b-0 *:inline-flex *:gap-2 *:items-center *:justify-center *:border-b-[1.5px] *:border-b-stone-700 *:border-dotted *:text-xs *:font-semibold *:text-[#434955] pb-3">
@@ -45,7 +58,7 @@ const ContactCard = () => {
                 <path d="M0 0h24v24H0V0z" fill="none"></path>
                 <path d="M19.23 15.26l-2.54-.29c-.61-.07-1.21.14-1.64.57l-1.84 1.84c-2.83-1.44-5.15-3.75-6.59-6.59l1.85-1.85c.43-.43.64-1.03.57-1.64l-.29-2.52c-.12-1.01-.97-1.77-1.99-1.77H5.03c-1.13 0-2.07.94-2 2.07.53 8.54 7.36 15.36 15.89 15.89 1.13.07 2.07-.87 2.07-2v-1.73c.01-1.01-.75-1.86-1.76-1.98z"></path>
               </svg>
-              <a href="tel:0501376295">050-137-6295</a>
+              <a href="tel:0501376295">{user.userProfile?.contact}</a>
             </li>
             <li>
               <svg className="fill-stone-700 group-hover:fill-portBlue" height="15" width="15" id="mail" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -56,11 +69,11 @@ const ContactCard = () => {
             </li>
             <li>
              <Linkedin className="fill-stone-700 group-hover:fill-[#58b0e0]" size={15} />
-              <a href="https://www.linkedin.com/in/monica-edem-kokovena-6016a1118/">LinkedIn</a>
+              <a href={`https://${user.userProfile?.linkedInLink}`}>LinkedIn</a>
             </li>
             <li>
               <GitBranch className="fill-stone-700 group-hover:fill-[#58b0e0]" size={15}/>
-              <a href="https://github.com/MonicaEdem?tab=repositories">GIT</a>
+              <a href={`https://${user.userProfile?.gitHubLink}`}>GIT</a>
             </li>
             
           </ul>

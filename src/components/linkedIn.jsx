@@ -1,6 +1,28 @@
+import { useState } from "react";
+import { apiGetUserDetails } from "../services/preview";
 
 
 const LinkedIn = () => {
+
+  const [user, setUser] = useState({});
+
+  const getUser = async () => {
+      const userDetails = await apiGetUserDetails("donatus")
+
+      setUser(userDetails)
+
+     
+
+  }
+
+
+  getUser()
+
+  if (!user) {
+    return "null"
+}
+  
+
   return (
     <section class="flex justify-center items-center">
     <button

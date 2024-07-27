@@ -1,46 +1,58 @@
-
-import CircularSkill from "../../components/skillsMeasure"
+import { useEffect, useState } from "react";
+import CircularSkill from "../../components/skillsMeasure";
+import { apiGetUserDetails } from "../../services/preview";
+import Loader from "../../components/loader";
 
 const Skills = () => {
-    return (
-        <div>
+    const [user, setUser] = useState({});
+   
+    const [loading, setLoading] = useState(true);
 
-            <div className=" flex flex-col gap-y-10 px-36 p-20 justify-center scale-up-center">
+    useEffect(() => {
+        const getUser = async ()=>{
+            
+            try {
+                setLoading(true);
+                const userDetails = await apiGetUserDetails("donatus")
+                
+                setUser(userDetails.skills)
+                
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                
+            } finally{
+                setLoading(false);
+            }
+        }
 
-                <h1 className="font-bold antialiased text-[2rem]">Resume</h1>
-                <div className=" flex">
-                    <div className="w-1/2">
-                        <span className="text-[22px] font-medium pb-20">Skills <br />
-                            & Expertise</span>
+        getUser();
+    }, []);
 
-                    </div>
+    if (loading){
+        return <Loader/>;
+    }
 
-                    <div className="flex flex-row-4 flex-wrap gap-x-10 gap-y-5 w-1/2">
-                        <div className="grid grid-cols-3 gap-8 antialiased">
-                            <CircularSkill skill="HTML" level="80" />
-                            <CircularSkill skill="CSS" level="83" />
-                            <CircularSkill skill="JavaScript" level="70" />
-                            <CircularSkill skill="React" level="89" />
-                            <CircularSkill skill="Taiwind CSS" level="79" />
-                            <CircularSkill skill="GIT" level="77" />
+ 
 
-                        </div>
-                    </div>
+  return (
+    <div>
+      <div className="flex flex-col gap-y-10 px-36 p-20 justify-center scale-up-center">
+        <h1 className="font-bold antialiased text-[2rem]">Resume</h1>
+        <div className="flex">
+          <div className="w-1/2">
+            <span className="text-[22px] font-medium pb-20">Skills <br />
+              & Expertise</span>
+          </div>
 
-
-                </div>
-
-
-
+          <div className="flex flex-row-4 flex-wrap gap-x-10 gap-y-5 w-1/2">
+            <div className="grid grid-cols-3 gap-8 antialiased">
+              {user.map((skills)=>(<CircularSkill name={skills.name} levelOfProficiency={skills.levelOfProficiency} />))}
             </div>
-
-
-
-
+          </div>
         </div>
+      </div>
+    </div>
+  );
+};
 
-
-    )
-}
-
-export default Skills
+export default Skills;

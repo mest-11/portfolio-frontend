@@ -1,6 +1,7 @@
 import { Circle, UserRound } from "lucide-react"
 import { apiGetUserDetails } from "../services/preview";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Loader from "./loader";
 
 
 
@@ -8,23 +9,32 @@ import { useState } from "react";
 const SubNavBar = () => {
 
   const [user, setUser] = useState({});
+   
+    const [loading, setLoading] = useState(true);
 
-  const getUser = async () => {
-      const userDetails = await apiGetUserDetails("donatus")
+    useEffect(() => {
+        const getUser = async ()=>{
+            
+            try {
+                setLoading(true);
+                const userDetails = await apiGetUserDetails("donatus")
+                
+                setUser(userDetails)
+                
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                
+            } finally{
+                setLoading(false);
+            }
+        }
 
-      setUser(userDetails)
+        getUser();
+    }, []);
 
-      console.log("userprofile", userDetails)
-      console.log("user", userDetails)
-
-  }
-
-
-  getUser()
-
-  if (!user) {
-    return "null"
-}
+    if (loading){
+        return <Loader/>;
+    }
 
 
   return (

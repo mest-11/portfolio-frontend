@@ -3,30 +3,38 @@ import Git from "./git"
 import LinkedIn from "./linkedIn"
 import DownloadRsesume from "./downloadRsesume"
 import { apiGetUserDetails } from "../services/preview"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import Loader from "./loader"
 
 
 const SubFooter = () => {
-
-
     const [user, setUser] = useState({});
+   
+    const [loading, setLoading] = useState(true);
 
-    const getUser = async () => {
-        const userDetails = await apiGetUserDetails("donatus")
-  
-        setUser(userDetails)
-  
-        console.log("userprofile", userDetails)
-        console.log("user", userDetails)
-  
+    useEffect(() => {
+        const getUser = async ()=>{
+            
+            try {
+                setLoading(true);
+                const userDetails = await apiGetUserDetails("donatus")
+                
+                setUser(userDetails)
+                
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                
+            } finally{
+                setLoading(false);
+            }
+        }
+
+        getUser();
+    }, []);
+
+    if (loading){
+        return <Loader/>;
     }
-  
-  
-    getUser()
-  
-    if (!user) {
-      return "null"
-  }
     
     return (
         <div>
@@ -43,8 +51,8 @@ const SubFooter = () => {
                     <a href="mailto:monicaekokovena@gmail.com">{user.email}</a>
                 </div>
                 <div className="flex gap-x-6 justify-center items-center">
-                    <a href={`https:/${user.userProfile?.gitHubLink}`} target ="_blank"><Git /></a>
-                    <a href=""><LinkedIn /></a>
+                <a href={`https://${user.userProfile?.gitHubLink}`} target="_blank" rel="noopener noreferrer"><Git /></a>
+                <a href={`https://${user.userProfile?.linkedInLink}`} target="_blank" rel="noopener noreferrer"><LinkedIn /></a>
 
                 </div>
 
