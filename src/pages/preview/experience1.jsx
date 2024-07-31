@@ -34,7 +34,7 @@ const Experience = () => {
     }
 
     return (
-        <div className=" flex flex-col px-28 py-10 gap-y-10">
+        <div className=" flex flex-col px-36 py-10 gap-y-10">
 
      
             <div className=" flex">
@@ -44,7 +44,7 @@ const Experience = () => {
 
                 </div>
 
-                <div className="flex flex-col gap-y-10 w-3/4"> 
+                <div className="flex flex-col gap-y-10 w-3/4 "> 
                 {user.map((experiences)=>(<ExperienceCard role={experiences.role} companyName={experiences.companyName}  skills={experiences.skills} startDate={experiences.startDate} endDate={experiences.endDate}/>))}
                
 

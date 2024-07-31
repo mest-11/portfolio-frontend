@@ -2,29 +2,23 @@ import AchieveCard from "../../components/achieveCard"
 
 const Achieve = () => {
   return (
-    <div className=" flex flex-col px-28 py-10 gap-y-10">
-
-    <div className=" flex">
-        <div className="w-1/4">
-        <span className="text-[22px] font-medium">Achievements
+    <div className=" flex flex-col justify-center">
+      <span className="text-[22px] font-medium px-36 py-10 ">Certification
         </span>
 
-        </div>
+        <div className="flex flex-wrap justify-center">
 
-        <div className="flex flex-col gap-y-10 w-3/4"> 
       <AchieveCard/>
+      <AchieveCard/>
+      <AchieveCard/>
+      <AchieveCard/>
+      <AchieveCard/>
+
+      </div>
      
         
         </div>
 
-
-      
-    </div>
-
-
-
-
-</div>
   )
 }
 

@@ -3,9 +3,13 @@ import MyImg from "../../assets/images/myImg2.jpeg"
 import SubFooter from "../../components/subFooter"
 import { apiGetUserDetails } from "../../services/preview"
 import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 
 const Hero = () => {
     const [user, setUser] = useState({});
+
+    const params = useParams();
+    console.log("~Preview ~params", params);
    
     const [loading, setLoading] = useState(true);
 
@@ -14,7 +18,7 @@ const Hero = () => {
             
             try {
                 setLoading(true);
-                const userDetails = await apiGetUserDetails("donatus")
+                const userDetails = await apiGetUserDetails(params.username);
                 
                 setUser(userDetails)
                 
@@ -41,7 +45,7 @@ const Hero = () => {
 
             <section >
                 <div className="flex justify-center items-center gap-x-5 px-[5rem] py-[8rem]">
-                    <img src={`https://savefiles.org/${user.userProfile.profilePicture}?shareable_link=307`} alt="user image" className="h-[25rem] w-[25rem] rounded-full  border-r-1 slide-in-top" />
+                    <img src={`https://savefiles.org/${user?.userProfile?.profilePicture}?shareable_link=307`} alt="user image" className="h-[25rem] w-[25rem] rounded-full  border-r-1 slide-in-top" />
                     <div className="flex flex-col justify-center w-[50%] slide-in-bottom">
                         <span className="text-[5rem] antialiased font">Hello</span>
                         <span className="text-[22px] font-medium antialiased">About me</span>

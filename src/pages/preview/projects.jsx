@@ -7,49 +7,52 @@ import Loader from "../../components/loader";
 
 const Projects = () => {
   const [user, setUser] = useState({});
-   
-    const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const getUser = async ()=>{
-            
-            try {
-                setLoading(true);
-                const userDetails = await apiGetUserDetails("donatus")
-                
-                setUser(userDetails.experiences)
-                
-            } catch (error) {
-                console.error('Error fetching data:', error);
-                
-            } finally{
-                setLoading(false);
-            }
-        }
+  const [loading, setLoading] = useState(true);
 
-        getUser();
-    }, []);
+  useEffect(() => {
+    const getUser = async () => {
 
-    if (loading){
-        return <Loader/>;
+      try {
+        setLoading(true);
+        const userDetails = await apiGetUserDetails("donatus")
+
+        setUser(userDetails.experiences)
+
+      } catch (error) {
+        console.error('Error fetching data:', error);
+
+      } finally {
+        setLoading(false);
+      }
     }
+
+    getUser();
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div className="bg-[#F3F3F3]">
       <SubNavBar />
 
-      <div  className="flex flex-col px-36 py-20">
+      <div className="flex flex-col px-36 py-20">
 
-      <span className=" text-[2rem] font-bold antialiased pb-20 ">
-        Projects
-      </span>
+        <span className=" text-[2rem] font-bold antialiased pb-20 ">
+          Projects
+        </span>
 
-      <div className="flex-flex-col justify-center ">
-      <ProjectsCard/>
-     
+        <div className="flex flex-col justify-center gap-y-24 ">
+          <ProjectsCard />
+          <ProjectsCard />
+          <ProjectsCard />
+
+
+        </div>
+
       </div>
-
-      </div>
-      <SubFooter/>
+      <SubFooter />
 
 
     </div>

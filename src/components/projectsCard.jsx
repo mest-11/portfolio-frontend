@@ -1,9 +1,9 @@
 import React from 'react'
-import Project1 from "../assets/images/ExpertCare.mp4"
+import Project1 from "../assets/images/Euphoria.png"
 
 const ProjectsCard = () => {
     return (
-        <div className=" flex flex-col justify-center gap-y-10">
+        <div className=" flex flex-col justify-center gap-y-5">
 
             <div className=" flex gap-x-10">
                 <div className="w-1/2 flex flex-col gap-y-2">
@@ -19,13 +19,8 @@ const ProjectsCard = () => {
 
                 </div>
 
-                <div className="flex flex-col  w-1/2 pb-20">
-                    <video className='w-[30rem]' controls>
-                        <source src={Project1} type="video/mp4">
-
-                           
-                            </source>
-                    </video>
+                <div className="flex flex-col  w-1/2 ">
+                    <img src={Project1} alt="project image"  className='w-[90%] h-[40vh] '/>
                    
 
             </div>

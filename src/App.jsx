@@ -23,6 +23,7 @@ import Contact from './pages/preview/contact'
 import LogIn from './pages/logIn'
 import Overview from './pages/dashboard/pages/overview'
 import { apiGetUserDetails } from "./services/preview";
+import { toast } from 'react-toastify'
 
 function App() {
 
@@ -38,10 +39,6 @@ function App() {
     {
       path: '/signup',
       element: <Signup />
-    },
-    {
-      path: '/preview',
-      element: <Preview />
     },
     {
       path: '/dashboard',

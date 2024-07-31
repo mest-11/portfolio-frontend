@@ -4,7 +4,8 @@ const ExperienceCard = ({role, companyName, skills, startDate, endDate}) => {
 
 
   return (
-    <div> <div className=" flex gap-x-10">
+    <div> 
+      <div className=" flex gap-x-10">
     <span className="w-[300px]">{startDate}  -  {endDate}</span>
 
     <div className="flex flex-col">

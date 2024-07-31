@@ -40,8 +40,8 @@ console.log("skills",user)
         <div className="avatar w-full pt-5 flex items-center justify-center flex-col gap-1">
           <div className="img_container w-full flex items-center justify-center relative z-40 after:absolute after:h-[6px] after:w-full after:bg-portBlue after:top-4 after:group-hover:size-[1%] after:delay-300 after:group-hover:delay-0 after:group-hover:transition-all after:group-hover:duration-300 after:transition-all after:duration-300 before:absolute before:h-[6px] before:w-full before:bg-portBlue before:bottom-4 before:group-hover:size-[1%] before:delay-300 before:group-hover:delay-0 before:group-hover:transition-all before:group-hover:duration-300 before:transition-all before:duration-300">
             <img
-              src={CardImage}
-              alt="Profile"
+              src={`https://savefiles.org/${user.userProfile.profilePicture}?shareable_link=307`}
+              alt="user image"
               className="size-36 z-40 border-4 border-white rounded-full group-hover:border-8 group-hover:transition-all group-hover:duration-300 transition-all duration-300"
             />
             <div className="absolute bg-portBlue z-10 size-[60%] w-full group-hover:size-[1%] group-hover:transition-all group-hover:duration-300 transition-all duration-300 delay-700 group-hover:delay-0"></div>
