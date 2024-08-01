@@ -107,8 +107,8 @@ function App() {
       element: <Resume />
     },
     {
-      path: '/projects',
-      element: <Projects />
+      path: 'projects/:username',
+      element: <Projects />,
     },
     {
       path: '/contact',
