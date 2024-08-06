@@ -1,100 +1,99 @@
-
-import './App.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Landing from './pages/landing'
-import Signup from './pages/signup'
-import Preview from './pages/preview'
-import DashBoardLayout from './pages/dashboard/Layout/DashBoardLayout'
-import Skills from './pages/dashboard/pages/skills'
-import Project from './pages/dashboard/pages/project'
-import Expericence from './pages/dashboard/pages/experience'
-import Achievements from './pages/dashboard/pages/achievements'
-import AddSkill from './pages/dashboard/pages/AddSkill'
-import AddProject from './pages/dashboard/pages/AddProject'
-import AddExperience from './pages/dashboard/pages/AddExperience'
-import Education from './pages/dashboard/pages/education'
-import AddBio from './pages/dashboard/pages/AddBio'
-import AddAchievement from './pages/dashboard/pages/AddAchievement'
-import AddEducation from './pages/dashboard/pages/AddEducation'
-import Bio from './pages/dashboard/pages/bio'
-import Resume from './pages/preview/resume'
-import Projects from './pages/preview/projects'
-import Contact from './pages/preview/contact'
-import LogIn from './pages/logIn'
-import Overview from './pages/dashboard/pages/overview'
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Landing from "./pages/landing";
+import Signup from "./pages/signup";
+import Preview from "./pages/preview";
+import DashBoardLayout from "./pages/dashboard/Layout/DashBoardLayout";
+import Skills from "./pages/dashboard/pages/skills";
+import Project from "./pages/dashboard/pages/project";
+import Expericence from "./pages/dashboard/pages/experience";
+import Achievements from "./pages/dashboard/pages/achievements";
+import AddSkill from "./pages/dashboard/pages/AddSkill";
+import AddProject from "./pages/dashboard/pages/AddProject";
+import AddExperience from "./pages/dashboard/pages/AddExperience";
+import Education from "./pages/dashboard/pages/education";
+import AddBio from "./pages/dashboard/pages/AddBio";
+import AddAchievement from "./pages/dashboard/pages/AddAchievement";
+import AddEducation from "./pages/dashboard/pages/AddEducation";
+import Bio from "./pages/dashboard/pages/bio";
+import Resume from "./pages/preview/resume";
+import Projects from "./pages/preview/projects";
+import Contact from "./pages/preview/contact";
+import LogIn from "./pages/logIn";
+import Overview from "./pages/dashboard/pages/overview";
 import { apiGetUserDetails } from "./services/preview";
-import { toast } from 'react-toastify'
+import { toast } from "react-toastify";
+import PreviewHero from "./pages/preview/hero";
 
 function App() {
-
   const router = createBrowserRouter([
     {
-      path: '/',
-      element: <Landing />
+      path: "/",
+      element: <Landing />,
     },
     {
-      path: '/login',
-      element: <LogIn />
+      path: "login",
+      element: <LogIn />,
     },
     {
-      path: '/signup',
-      element: <Signup />
+      path: "signup",
+      element: <Signup />,
     },
     {
-      path: '/dashboard',
+      path: "dashboard",
       element: <DashBoardLayout />,
       children: [
         {
           index: true,
-          element: <Overview/>
+          element: <Overview />,
         },
         {
           path: "skills",
-          element: <Skills />
+          element: <Skills />,
         },
         {
           path: "skills/add-skill",
-          element: <AddSkill />
+          element: <AddSkill />,
         },
         {
           path: "projects",
-          element: <Project />
+          element: <Project />,
         },
         {
           path: "projects/add-project",
-          element: <AddProject />
+          element: <AddProject />,
         },
         {
           path: "experience",
-          element: <Expericence />
+          element: <Expericence />,
         },
         {
           path: "experience/add-experience",
-          element: <AddExperience />
+          element: <AddExperience />,
         },
         {
           path: "education",
-          element: <Education />
+          element: <Education />,
         },
         {
-          path: "/dashboard/education/add-education",
-          element: <AddEducation />
+          path: "dashboard/education/add-education",
+          element: <AddEducation />,
         },
         {
           path: "bio",
-          element: <Bio />
+          element: <Bio />,
         },
         {
-          path: "/dashboard/bio/add-bio",
-          element: <AddBio />
+          path: "dashboard/bio/add-bio",
+          element: <AddBio />,
         },
         {
           path: "achievements",
-          element: <Achievements />
+          element: <Achievements />,
         },
         {
-          path: "/dashboard/achievements/add-achievement",
-          element: <AddAchievement />
+          path: "dashboard/achievements/add-achievement",
+          element: <AddAchievement />,
         },
         // {
         //   path:"/dasboard/volunteering/add-volunteering",
@@ -103,40 +102,41 @@ function App() {
       ],
     },
     {
-      path: '/resume',
-      element: <Resume />
-    },
-    {
-      path: 'projects/:username',
-      element: <Projects />,
-    },
-    {
-      path: '/contact',
-      element: <Contact />
-    },
-
-    {
       path: "preview/:username",
       element: <Preview />,
       loader: async ({ params }) => {
         const username = params.username;
         try {
           const response = await apiGetUserDetails(username);
-          const userProfileData = response?.data.user;
-          return userProfileData;
+          // const userProfileData = response?.data.user;
+          console.log(response);
+          return response;
         } catch (error) {
           toast.error("An error occured");
           return null;
         }
       },
+      children: [
+        {
+          index: true,
+          element: <PreviewHero />,
+        },
+        {
+          path: "resume",
+          element: <Resume />,
+        },
+        {
+          path: "projects",
+          element: <Projects />,
+        },
+        {
+          path: "contact",
+          element: <Contact />,
+        },
+      ],
     },
-  ])
-  return (
-    <>
-
-      <RouterProvider router={router} />
-    </>
-  )
+  ]);
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;

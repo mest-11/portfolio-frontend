@@ -1,55 +1,34 @@
-import { Circle, UserRound } from "lucide-react"
-import { apiGetUserDetails } from "../services/preview";
-import { useEffect, useState } from "react";
-import Loader from "./loader";
+import { Circle, UserRound } from "lucide-react";
+import { Link } from "react-router-dom";
 
-
-
-
-const SubNavBar = () => {
-
-  const [user, setUser] = useState({});
-   
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const getUser = async ()=>{
-            
-            try {
-                setLoading(true);
-                const userDetails = await apiGetUserDetails("donatus")
-                
-                setUser(userDetails)
-                
-            } catch (error) {
-                console.error('Error fetching data:', error);
-                
-            } finally{
-                setLoading(false);
-            }
-        }
-
-        getUser();
-    }, []);
-
-    if (loading){
-        return <Loader/>;
-    }
-
-
+const SubNavBar = ({ firstName, lastName, userName }) => {
   return (
     <nav className="flex justify-between p-8">
-    <span className="text-[25px] "><a href="/preview"><Circle className="fill-blue-400 text-portBlue"/>{`${user.firstName} ${user.lastName}`} </a></span>
-    <div className="flex gap-x-[1rem] text-[20px]">
-        <span><a href="/resume">Resume</a> <span className="">|</span></span>
-        <span><a href="/projects">Projects </a><span className="">|</span></span>
-        <span><a href="/contact">Contact </a><span className="">|</span></span>
-        <span><a href="/signup"><UserRound/> </a></span>
+      <span className="text-[25px] ">
+        <Link to={`/preview/${userName}`}>
+          <Circle className="fill-blue-400 text-portBlue" />
+          {`${firstName} ${lastName}`}{" "}
+        </Link>
+      </span>
+      <div className="flex gap-x-[1rem] text-[20px]">
+        <Link to={`/preview/${userName}/resume`}>Resume</Link>{" "}
+        <span className="">|</span>
+        <span>
+          <Link to={`/preview/${userName}/projects`}>Projects</Link>{" "}
+          <span className="">|</span>
+        </span>
+        <span>
+          <Link to={`/preview/${userName}/contact`}>Contact</Link>{" "}
+          <span className="">|</span>
+        </span>
+        <span>
+          <a href="/signup">
+            <UserRound />{" "}
+          </a>
+        </span>
+      </div>
+    </nav>
+  );
+};
 
-    </div>
-</nav>
-
-  ) 
-}
-
-export default SubNavBar
+export default SubNavBar;
