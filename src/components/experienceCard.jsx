@@ -1,15 +1,16 @@
 
 
-const ExperienceCard = () => {
+const ExperienceCard = ({role, companyName, skills, startDate, endDate}) => {
+
+
   return (
-    <div> <div className=" flex gap-x-10">
-    <span className="w-[300px]">2035 - Present</span>
+    <div> 
+      <div className=" flex gap-x-10">
+    <span className="w-[300px]">{startDate}  -  {endDate}</span>
 
     <div className="flex flex-col">
-        <span className="font-medium text-[16px]">Administrative Assistant | University of Ghana</span>
-        <p> I provided administrative support to the project, 
-Set up and managed correspondence and meetings with project funders and stakeholders 
-and Kept and managed project records
+        <span className="font-medium text-[16px]">{role} | {companyName}</span>
+        <p> {skills}
 </p>
     </div>
      

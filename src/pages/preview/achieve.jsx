@@ -1,31 +1,25 @@
-import AchieveCard from "../../components/achieveCard"
+import AchieveCard from "../../components/achieveCard";
 
-const Achieve = () => {
+const Achieve = ({ achievements }) => {
   return (
-    <div className=" flex flex-col px-28 py-10 gap-y-10">
+    <div className=" flex flex-col justify-center">
+      <span className="text-[22px] font-medium px-36 py-10 ">
+        Certification
+      </span>
 
-    <div className=" flex">
-        <div className="w-1/4">
-        <span className="text-[22px] font-medium">Achievements
-        </span>
-
-        </div>
-
-        <div className="flex flex-col gap-y-10 w-3/4"> 
-      <AchieveCard/>
-     
-        
-        </div>
-
-
-      
+      <div className="flex flex-wrap justify-center">
+        {achievements?.map((achievement) => (
+          <AchieveCard
+            award={achievement.award}
+            date={achievement.date}
+            image={`https://savefiles.org/${achievement?.image}?shareable_link=307`}
+            nameOfOrganisation={achievement.nameOfOrganisation}
+            description={achievement.description}
+          />
+        ))}
+      </div>
     </div>
+  );
+};
 
-
-
-
-</div>
-  )
-}
-
-export default Achieve
+export default Achieve;

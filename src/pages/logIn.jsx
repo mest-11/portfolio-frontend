@@ -15,7 +15,7 @@ const LogIn = () => {
 
 
 
-  const { register, handleSubmit, formState: { errors } } = useForm()
+  const { register, handleSubmit, formState: { errors } } = useForm({ reValidateMode: "onBlur", mode: "all" });
 
   const onSubmit = async (data) => {
     console.log(data);

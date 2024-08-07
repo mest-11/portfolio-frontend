@@ -41,10 +41,17 @@ const K = {
          link: "/dashboard/education"
       },
       {
+ feature/Addpreview
+         icon: <ScanEye/>,
+         text: "Preview",
+         link: "/preview"
+      },
+
          icon:<ScanEye/>,
          text:"Preview",
          link:"/preview"
       }
+ develop
    ],
 
    SKILLS:
@@ -69,9 +76,7 @@ const K = {
             name: "Vue",
             levelOfProficiency: "Advanced"
          },
-      ],
-
-<<<<<<< HEAD
+    
    OVERVIEW: 
    [
       {
@@ -109,7 +114,6 @@ const K = {
       },
    ]
    
-=======
    OVERVIEW:
       [
          {
@@ -139,7 +143,7 @@ const K = {
          },
       ]
 
->>>>>>> d79e311f088d8342109a4fb6340f4fb197760229
+
 };
 
 export default K;
