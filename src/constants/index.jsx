@@ -41,10 +41,17 @@ const K = {
          link: "/dashboard/education"
       },
       {
+ feature/Addpreview
          icon: <ScanEye/>,
          text: "Preview",
          link: "/preview"
       },
+
+         icon:<ScanEye/>,
+         text:"Preview",
+         link:"/preview"
+      }
+ develop
    ],
 
    SKILLS:
@@ -69,8 +76,44 @@ const K = {
             name: "Vue",
             levelOfProficiency: "Advanced"
          },
-      ],
-
+    
+   OVERVIEW: 
+   [
+      {
+        icon:<NotebookPen/>,
+        text:"skills",
+        total:10
+      },
+      {
+         icon:<GraduationCap/>,
+         text:"education",
+         total:3
+      },
+      {
+         icon:<Trophy/>,
+         text:"achievements",
+         total:20
+      },
+      {
+         icon:<ScrollText/>,
+         text:"experience",
+         total:50
+      },
+      {
+         icon:<FolderOpenDot/>,
+         text:"projects",
+         total:100
+      },
+   ],
+   EDUCATION:
+   [
+      {
+         icon:<GraduationCap/>,
+         name:"Kwame Nkrumah University of Science And TEchnology",
+         Degree:3
+      },
+   ]
+   
    OVERVIEW:
       [
          {
@@ -99,6 +142,7 @@ const K = {
             total: 100
          },
       ]
+
 
 };
 
