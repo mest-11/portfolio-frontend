@@ -1,10 +1,40 @@
 import React from 'react'
 import PagesLayout from '../Layout/pagesLayout'
+import { apiAddProjects } from '../../../services/projects';
+import Loader from '../../../components/loader';
 
 const AddProject = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    setIsSubmitting(true);
+    try {
+      const res = await apiAddProjects({
+        name: data.name,
+        contributors: data.contributors,
+        description:data.description,
+        status: data.project.status,
+        link:data.link
+        .toLowerCase(),
+      });
+      console.log(res.data);
+      toast.success(res.data.message);
+    } catch (error) {
+      console.log(error);
+      toast.error("An error occured");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
   
-
     <div className="relative flex size-full min-h-screen flex-col bg-[#F8F9FB] overflow-hidden">
 
       <div className="bg-[#F8F9FB] flex box-border place-content-center text-center">
@@ -13,21 +43,27 @@ const AddProject = () => {
 
           <h2 className="text-center place-content-center px-4 pb-3 pt-2 font-bold">Create a New Project</h2>
 
-          <form className="border-portBlue">
+          <form onSubmit={handleSubmit(onSubmit)}
+          className="border-portBlue">
 
             <div className="">
               <label htmlFor='Image'>Upload Image</label>
-              <input type='file' id=''  className='px-4 text-center pb-10 pt-2 focus:outline-0 focus:ring-0 border-[2px] border-blue-500 h-10 rounded-md m-4 animate-pulse'/>
+              <input type='file' id='file'  className='px-4 text-center pb-10 pt-2 focus:outline-0 focus:ring-0 border-[2px] border-blue-500 h-10 rounded-md m-4 animate-pulse'/>
             </div>
 
             <div class="">
               <label for="projectName" >Project Name</label>
-              <input type="text" id="projectName" name="projectName" className='px-4 text-center pb-2 pt-1 border-[2px] rounded-md border-blue-500 h-7 m-2' placeholder='Enter Project Name' />
+              <input type="text" id="projectName" name="projectName"
+              {...register("name", { required: "name is required" })} className='px-4 text-center pb-2 pt-1 border-[2px] rounded-md border-blue-500 h-7 m-2' placeholder='Enter Project Name' />
+              {errors.name && <p className="text-red-500">{errors.name.message}</p>}
             </div>
 
             <div class="">
               <label htmlfor="projectDescription">Project Description</label>
               <textarea id="projectDescription" name="projectDescription" className='px-4 rounded-md text-center pb-5 pt-2 border-[2px] border-blue-500 h-10 m-4' placeholder='Text Here'/>
+              {errors.contributors && (
+            <p className="text-red-500">{errors.contributors.message}</p>
+          )}
             </div>
 
             <div>
@@ -53,13 +89,13 @@ const AddProject = () => {
             </div>
 
             <div>
-              <label for="homepage">Add your homepage:</label>
-              <input type="url" id="homepage" name="homepage" className='px-4 text-center pb-2 pt-1 focus:outline-0 focus:ring-0 border-[2px] rounded-md border-blue-500 h-7 m-2'placeholder='Enter your Link' />
+              <label for="link">Link</label>
+              <input type="url" id="link" name="link" className='px-4 text-center pb-2 pt-1 focus:outline-0 focus:ring-0 border-[2px] rounded-md border-blue-500 h-7 m-2'placeholder='Enter your Link' />
             </div>
 
             <div>
-              <label htmlFor="Organisation">Organisation</label>
-              <input type='text' className='px-4 text-center pb-2 pt-1 focus:outline-0 focus:ring-0 border-[2px] rounded-md border-blue-500 h-7 m-2' placeholder="Enter the Organisation" />
+              <label htmlFor="nameOfInstitution">Institution</label>
+              <input type='text' className='px-4 text-center pb-2 pt-1 focus:outline-0 focus:ring-0 border-[2px] rounded-md border-blue-500 h-7 m-2' placeholder="Enter here" />
 
             </div>
 
@@ -74,7 +110,7 @@ const AddProject = () => {
             </div>
 
 
-            <button type="submit" className="animate-bounce rounded-md px-4 text-center pb-5 pt-1 focus:outline-0 focus:ring-0 border-[2px] border-blue-500 h-5 m-2 hover:bg-white">Create Project</button>
+            <button type="submit" className="animate-bounce rounded-md px-4 text-center pb-5 pt-1 focus:outline-0 focus:ring-0 border-[2px] border-blue-500 h-5 m-2 hover:bg-white">{isSubmitting ? <Loader /> : "Add Project"}</button>
           </form>
         </div>
       </div>

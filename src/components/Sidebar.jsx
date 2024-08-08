@@ -16,7 +16,7 @@ const Sidebar = () => {
         }
     };
     return (
-        <div className=" h-full w-[300px] bg-portBlue shadow flex flex-col px-8 py-12  transition transition: width 0.3s ease;">
+        <div className=" h-full w-[300px] bg-portBlue shadow flex flex-col px-8 py-12">
             <div>
                 <span className="text-3xl font-bold text-white text-center">Port<b className='text-orange-300'>folio</b></span>
                 {/* <img src=" alt=" /> */}
@@ -24,7 +24,8 @@ const Sidebar = () => {
 
             <div className="flex flex-col gap-y-3 mt-12">
                 {
-                    K.NAVLINKS.map(({ icon, text, link }, index) => (
+                    K.NAVLINKS.map(({ 
+                        icon, text, link }, index) => (
                         <NavLink
                             to={link}
                             key={index} className={({isActive})=>`flex gap-x-4 items-center hover:bg-portBlue hover:text-white hover:rounded-md p-2 ${isActive ? "bg-portblue" : ""}`

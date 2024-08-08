@@ -8,7 +8,7 @@ export const apiGetExperiences = async() =>{
    return apiClient.get("/experiences");
 };
 
-export const apiGetexperiencesById =async(id) => {
+export const apiGetExperiencesById =async(id) => {
    return apiClient.get(`/experiences/${id}`);
 };
 
@@ -16,6 +16,6 @@ export const apiUpdateExperiences = async(id) =>{
    return apiClient.patch(`/experiences/${id}`);
 };
 
-export const apiDeleteEperiences = async(id) =>{
+export const apiDeleteExperiences = async(id) =>{
    return apiClient.delete(`/experiences/${id}`);
 };

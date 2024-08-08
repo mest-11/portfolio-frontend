@@ -8,6 +8,23 @@ export const apiClient = axios.create({
 
 });
 
+export const getDetails =() => {
+  const user ={};
+
+  user.token = localStorage.getItem("accessToken");
+  user.firstName = localStorage.getItem("firstName");
+  user.token = localStorage.getItem("lastName");
+  user.lastName = localStorage.getItem("userName");
+
+  return user;
+};
+
+export const clearDetails =() => {
+  localStorage.removeItem("accessToken");
+  localStorage.removeItem("firstName");
+  localStorage.removeItem("lastName");
+  localStorage.removeItem("userName")
+};
 export const getToken = () => localStorage.getItem("accessToken");
 
 export const clearToken = () => localStorage.removeItem("accessToken");

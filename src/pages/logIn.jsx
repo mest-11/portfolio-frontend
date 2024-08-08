@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { apiLogIn } from "../services/auth"
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import {toast} from "react-toastify"
 import Loader from "../components/loader";
 
@@ -9,13 +9,22 @@ import Loader from "../components/loader";
 const LogIn = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
 
 
+  const 
+  { register,
+     handleSubmit,
+      formState: { errors }, 
+} = useForm({reValidateMode:"onBlur",mode: "all"});
 
-
-  const { register, handleSubmit, formState: { errors } } = useForm()
+const addToLocalStorage = (accessToken, user) => {
+  localStorage.setItem("accessToken", accessToken);
+  localStorage.setItem("firstName", user.firstName);
+  localStorage.setItem("lastName", user.lastName);
+  localStorage.setItem("userName", user.userName);
+};
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -24,27 +33,21 @@ const LogIn = () => {
     try {
       const res = await apiLogIn({
         email: data.email,
-        password: data.password
-      })
-      console.log("Response: ", res.data);
-      localStorage.setItem("accessToken",res.data.accessToken);
+        password: data.password,
+      });
+      console.log(res.data);
 
-      toast.success(res.data.message)
-      setTimeout(()=>{
-           // redirecting to dashboard
+      addToLocalStorage(res.data.accessToken, res.data.user);
 
-      navigate("/dashboard")
-      },2000)
-
-   
-
+      toast.success(res.data.message);
+      setTimeout(() => {
+        navigate("/dasboard");
+      }, 500);
     } catch (error) {
       console.log(error);
       toast.error("An error occured")
-
-    }
-    finally {
-      setIsSubmitting(false)
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -75,6 +78,7 @@ const LogIn = () => {
             </label>
             {errors.email && (<p className="text-red-500">{errors.email.message}</p>)}
           </div>
+          
           <div className="relative">
             <input
               id="password"

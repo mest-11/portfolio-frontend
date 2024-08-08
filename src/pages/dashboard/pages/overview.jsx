@@ -19,7 +19,8 @@ const Overview = () => {
     experiences: 0,
     volunteering: 0,
   });
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
+  
 
 
   const getData = async () => {
@@ -34,32 +35,28 @@ const Overview = () => {
       ]);
 
      
-      console.log("Total skills: ",totalSkills)
+      console.log("Total skills: ",totalSkills.data.Skills.length)
 
       const newData = {
-        skills: totalSkills.length,
-        projects: totalProjects.length,
-        achievements: totalAchievements.length,
-        education: totalEducation.length,
-        experiences: totalExperiences.length,
-
-
-      }
+        skills: totalSkills.data.Skills.length ?? 0,
+        projects: totalProjects.data.projects.length ?? 0,
+        achievements: totalAchievements.data.achievements.length ?? 0,
+        education: totalEducation.data.education.length ?? 0,
+        experiences: totalExperiences.data.experiences.length ?? 0,
+      };
       console.log(newData);
 
       setdata(newData);
-
     } catch (error) {
-      console.log(error)
+      console.log(error);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-
   };
 
   useEffect(() => {
     getData();
-          }, [])
+  }, [])
 
   useEffect(() => {
     const ctx = chartRef.current.getContext('2d');
