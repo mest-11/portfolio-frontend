@@ -1,6 +1,6 @@
 const DownloadRsesume = () => {
   return (
-    <div class="cursor-pointer flex justify-between bg-gray-800 px-3 py-2 rounded-full text-white tracking-wider shadow-xl hover:bg-gray-900 hover:scale-105 duration-500 hover:ring-1 font-mono w-[150px]">
+    <div class="cursor-pointer flex justify-center gap-3 bg-gray-800 px-3 py-2 rounded-full text-white tracking-wider shadow-xl hover:bg-gray-900 hover:scale-105 duration-500 hover:ring-1 font-mono w-[150px]">
       Resume
       <svg
         xmlns="http://www.w3.org/2000/svg"

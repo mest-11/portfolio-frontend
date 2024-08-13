@@ -2,16 +2,16 @@ import ExperienceCard from "../../components/experienceCard";
 
 const Experience = ({ experiences }) => {
   return (
-    <div className=" flex flex-col px-36 py-10 gap-y-10">
-      <div className=" flex">
-        <div className="w-1/4">
-          <span className="text-[22px] font-medium">
-            Work <br />
-            Experience
-          </span>
+      <div className=" px-36 pt-5 justify-center scale-up-center items-center bg-[#F3F3F3] m-10 rounded-lg pb-20">
+       
+        <div className="flex flex-col justify-center items-center">
+          
+            <span className="text-[22px] font-medium pb-10 pt-8 ">
+              Work Experience
+            </span>
         </div>
 
-        <div className="flex flex-col gap-y-10 w-3/4 ">
+        <div className="flex flex-col gap-y-10 ">
           {experiences?.map((experiences) => (
             <ExperienceCard
               role={experiences.role}
@@ -23,7 +23,6 @@ const Experience = ({ experiences }) => {
           ))}
         </div>
       </div>
-    </div>
   );
 };
 

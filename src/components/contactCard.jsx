@@ -1,40 +1,9 @@
 import { GitBranch, Linkedin } from "lucide-react";
-import CardImage from "../assets/images/myImg.jpeg"
-import { apiGetUserDetails } from "../services/preview";
-import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
 const ContactCard = () => {
-  const [user, setUser] = useState({});
-   
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const getUser = async ()=>{
-            
-            try {
-                setLoading(true);
-                const userDetails = await apiGetUserDetails("donatus")
-                console.log('hhhh', userDetails)
-                setUser(userDetails)
-                
-            } catch (error) {
-                console.error('Error fetching data:', error);
-                
-            } finally{
-                setLoading(false);
-            }
-        }
-
-        getUser();
-    }, []);
-
-    if (loading){
-        return <div>loading...</div>;
-    }
-
- 
-
-console.log("skills",user)
+  const user = useOutletContext();
+  console.log("Data: ", user);
     return (
       <div className="profile-card w-[350px] rounded-md shadow-xl overflow-hidden z-[100] relative cursor-pointer snap-start shrink-0 bg-white flex flex-col items-center justify-center gap-3 transition-all duration-300 group">
         <div className="avatar w-full pt-5 flex items-center justify-center flex-col gap-1">

@@ -10,7 +10,7 @@ const CircularSkill = ({ name, levelOfProficiency }) => {
     strokeDashoffset = circumference - (25 / 100) * circumference; // Represent Beginner as 25%
   } else if (levelOfProficiency === 'intermediate') {
     skillLevel = 'Intermediate';
-    strokeDashoffset = circumference - (65 / 100) * circumference; // Represent Intermediate as 65%
+    strokeDashoffset = circumference - (80 / 100) * circumference; // Represent Intermediate as 65%
   } else if (levelOfProficiency === 'advanced') {
     skillLevel = 'Advanced';
     strokeDashoffset = circumference - (100 / 100) * circumference; // Represent Advanced as 100%
@@ -45,7 +45,7 @@ const CircularSkill = ({ name, levelOfProficiency }) => {
           style={{ transition: 'stroke-dashoffset 0.5s' }}
         />
       </svg>
-      <span className="text-[20px] font-medium antialiased">{name}</span>
+      <span className="text-[20px] font-medium antialiased ">{name}</span>
       <span className="text-[15px] font-light italic">{skillLevel}</span>
     </div>
   );

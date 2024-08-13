@@ -9,7 +9,7 @@ const Resume = () => {
   const { skills, experiences, education, achievements } = useOutletContext();
 
   return (
-    <div className="bg-[#F3F3F3]">
+    <div className="">
       <Skills skills={skills} />
       <div className="bg-slate-200 h-[0.5px] w-full shadow-lg shadow-slate-300 "></div>
       <Experience experiences={experiences} />
