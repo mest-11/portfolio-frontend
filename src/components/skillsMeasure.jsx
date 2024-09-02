@@ -5,25 +5,30 @@ const CircularSkill = ({ name, levelOfProficiency }) => {
   let skillLevel;
   let strokeDashoffset;
 
-  if (levelOfProficiency === 'beginner') {
-    skillLevel = 'Beginner';
+  if (levelOfProficiency === "beginner") {
+    skillLevel = "Beginner";
     strokeDashoffset = circumference - (25 / 100) * circumference; // Represent Beginner as 25%
-  } else if (levelOfProficiency === 'intermediate') {
-    skillLevel = 'Intermediate';
-    strokeDashoffset = circumference - (80 / 100) * circumference; // Represent Intermediate as 65%
-  } else if (levelOfProficiency === 'advanced') {
-    skillLevel = 'Advanced';
+  } else if (levelOfProficiency === "intermediate") {
+    skillLevel = "Intermediate";
+    strokeDashoffset = circumference - (80 / 100) * circumference; // Represent Intermediate as 80%
+  } else if (levelOfProficiency === "advanced") {
+    skillLevel = "Advanced";
     strokeDashoffset = circumference - (100 / 100) * circumference; // Represent Advanced as 100%
   } else {
-    skillLevel = 'Beginner'; // Default to Beginner for unexpected values
+    skillLevel = "Beginner"; // Default to Beginner for unexpected values
     strokeDashoffset = circumference - (25 / 100) * circumference;
   }
 
-  console.log(`Skill: ${name}, Level: ${levelOfProficiency}, StrokeDashoffset: ${strokeDashoffset}`);
+  console.log(
+    `Skill: ${name}, Level: ${levelOfProficiency}, StrokeDashoffset: ${strokeDashoffset}`
+  );
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <svg className="w-20 h-20 mb-2">
+    <div className="flex flex-col items-center justify-center p-4">
+      <svg
+        className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mb-2"
+        viewBox="0 0 80 80"
+      >
         <circle
           cx="40"
           cy="40"
@@ -42,11 +47,15 @@ const CircularSkill = ({ name, levelOfProficiency }) => {
           strokeDasharray={circumference}
           strokeDashoffset={strokeDashoffset}
           strokeLinecap="round"
-          style={{ transition: 'stroke-dashoffset 0.5s' }}
+          style={{ transition: "stroke-dashoffset 0.5s" }}
         />
       </svg>
-      <span className="text-[20px] font-medium antialiased ">{name}</span>
-      <span className="text-[15px] font-light italic">{skillLevel}</span>
+      <span className="text-[16px] sm:text-[18px] md:text-[20px] font-medium antialiased">
+        {name}
+      </span>
+      <span className="text-[13px] sm:text-[14px] md:text-[15px] font-light italic">
+        {skillLevel}
+      </span>
     </div>
   );
 };

@@ -2,27 +2,26 @@ import ExperienceCard from "../../components/experienceCard";
 
 const Experience = ({ experiences }) => {
   return (
-      <div className=" px-36 pt-5 justify-center scale-up-center items-center bg-[#F3F3F3] m-10 rounded-lg pb-20">
-       
-        <div className="flex flex-col justify-center items-center">
-          
-            <span className="text-[22px] font-medium pb-10 pt-8 ">
-              Work Experience
-            </span>
-        </div>
-
-        <div className="flex flex-col gap-y-10 ">
-          {experiences?.map((experiences) => (
-            <ExperienceCard
-              role={experiences.role}
-              companyName={experiences.companyName}
-              skills={experiences.skills}
-              startDate={experiences.startDate}
-              endDate={experiences.endDate}
-            />
-          ))}
-        </div>
+    <div className="px-4 sm:px-8 md:px-20 lg:px-36 py-5 bg-[#F3F3F3] mx-4 md:mx-10 my-10 rounded-lg">
+      <div className="flex flex-col justify-center items-center">
+        <span className="text-[20px] sm:text-[22px] font-medium pb-8 pt-6">
+          Work Experience
+        </span>
       </div>
+
+      <div className="flex flex-col gap-y-6 md:gap-y-10">
+        {experiences?.map((experience, index) => (
+          <ExperienceCard
+            key={index}
+            role={experience.role}
+            companyName={experience.companyName}
+            skills={experience.skills}
+            startDate={experience.startDate}
+            endDate={experience.endDate}
+          />
+        ))}
+      </div>
+    </div>
   );
 };
 
