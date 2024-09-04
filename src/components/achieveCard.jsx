@@ -7,7 +7,7 @@ const AchieveCard = ({ description, image, date, nameOfOrganisation }) => {
           alt="cert img"
           className="w-[15rem] h-[10rem] rounded-[5px]"
         />
-        <span className="font-medium">{nameOfOrganisation}</span>
+        <span className="font-medium w-[70%]">{nameOfOrganisation}</span>
         <p className="w-[15rem]">{description}</p>
       </div>
   );
